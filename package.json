@@ -3,15 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "main": "app.js"
   },
   "dependencies": {
     "body-parser": "~1.8.1",
+    "colors": "^1.0.3",
     "cookie-parser": "~1.3.3",
     "debug": "~2.0.0",
     "ejs": "~0.8.5",
     "express": "~4.9.0",
+    "figures": "^1.3.5",
     "logalot": "^2.1.0",
+    "moment": "^2.8.4",
     "morgan": "~1.3.0",
     "serve-favicon": "~2.1.3"
   }
