@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-
+    res.cookie('haha','name1=value1&name2=value2');
   res.render('index', { title: 'Express' });
 });
 
