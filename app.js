@@ -5,17 +5,23 @@ var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
-var log = require('./lib/log').loger('app.js');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
+var log = require('./lib/log.js').logger('app.js');
+var uutil = require('./lib/uutil');
+var render = uutil.render;
+var compression = require('compression');
 
+app.use(compression());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 //app.engine('html', ejs.__express);
 //app.set('view engine', 'ejs');
 app.set('view engine', 'html');
-app.engine('html', require('ejs').renderFile);
+app.engine('html', ejs.renderFile);
+ejs.open = '{{';
+ejs.close = '}}';
 
 // uncomment after placing your favicon in /public
 app.use(favicon(__dirname + '/favicon.ico'));
@@ -39,30 +45,29 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-console.log(app.get('env'));
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
+        render(req, res, '404', {
+            title : 404,
             message: err.message,
-            error: err
+            error: {}
         });
     });
 }
-
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    render(req, res, '404', {
+        title : 404,
         message: err.message,
         error: {}
     });
 });
 
-app.set('port', process.env.PORT || 3000);
+
+app.set('port', process.env.PORT || 8888);
 app.listen(app.get('port'),function(){
-    log.suc('server running at '+app.get('port')+'  go  go go go..............................');
+    log.info('server running at '+app.get('port')+'  go  go go go..............................');
 });
-
-
