@@ -6,3 +6,5 @@ this.env = {
     css : 'http://s.xiexie.com/static/css',
     img : 'http://s.xiexie.com/static/img'
 };
+this.localhost = '127.0.0.1';
+this.dbUrl = 'mongodb://'+ this.localhost +'/xiexie';
