@@ -1,4 +1,16 @@
 var mongodb = require('./models');
+var User = require(models).User;
+
+    //email:{type:String},
+    //name:{type:String},
+	//age:{type:Number,min:0, max:120},
+    //password:{type:String},
+    //picPath:{type:String},
+	//date:{type:Date, default:Date.now},
+    //birthDay:{type:Date},
+    //status:{type:boolean, default:true}
+
+
 //首页
 exports.index = function(req, res){
     //无缓存，应尽量避免以这种方式发回文件
@@ -8,52 +20,57 @@ exports.index = function(req, res){
 //添加用户
 exports.addUser = function(req, res) {
     var picPath = req.body.pic;
-    if (!picPath || picPath.trim()=="") {
+    if (!picPath || picPath.trim()==="") {
         picPath = "upload/photo.jpg";
     }
     var user = new User({
-        userName:req.body.name,
-        loginCode:req.body.loginCode,
+        name:req.body.name,
+        email:req.body.loginCode,
         birthDay:req.body.birthday,
         password:req.body.password,
-        picPath:picPath
+        picPath:picPath,
+        age:req.body.age,
+        status:true
     });
     user.save(function(err, u) {
+        var result;
         if (err) {
-            var result = {'code':0,'msg':'添加用户失败：' + err};
+            result = {'code':0,'msg':'添加用户失败：' + err};
             res.json(result);
         }  else {
-            var result = {'code':1,'msg':'添加用户成功！'};
+            result = {'code':1,'msg':'添加用户成功！'};
             res.json(result);
         }
     });
-}
+};
 
 //批量删除用户 (uids为id字串，用-拼接，比如：1-3-4-5 )
 exports.deleteUsers = function(req, res) {
     User.remove({ _id: { $in: req.params.uids.split("-")}}, function (err) {
+        var result;
         if (err) {
-            var result = {'code':0,'msg':'批量删除用户失败：' + err};
+            result = {'code':0,'msg':'批量删除用户失败：' + err};
             res.json(result);
         }  else {
-            var result = {'code':1,'msg':'批量删除用户成功！'};
+            result = {'code':1,'msg':'批量删除用户成功！'};
             res.json(result);
         }
     });
-}
+};
 
 //删除用户
 exports.deleteUser = function(req, res) {
     User.remove({_id:req.params.uid}, function(err) {
+        var result;
         if (err) {
-            var result = {'code':0,'msg':'删除用户失败：' + err};
+            result = {'code':0,'msg':'删除用户失败：' + err};
             res.json(result);
         }  else {
-            var result = {'code':1,'msg':'删除用户成功！'};
+            result = {'code':1,'msg':'删除用户成功！'};
             res.json(result);
         }
     }) ;
-}
+};
 
 //修改用户
 exports.modifyUser = function(req, res) {
@@ -66,27 +83,28 @@ exports.modifyUser = function(req, res) {
 
         if (user) {
             user.userName = req.body.userName;
-            if (req.body.password  && req.body.password != "***" && req.body.password.trim() != "") {
+            if (req.body.password  && req.body.password !== "***" && req.body.password.trim() !== "") {
                 user.password = req.body.password;
             }
             user.birthDay =  req.body.birthday;
             user.picPath = req.body.pic;
             console.log(user);
             user.save(function(err){
-              if (err) {
-                  var result = {'code':0,'msg':'修改用户失败：' + err};
-                  res.json(result);
-              }  else {
-                  var result = {'code':1,'msg':'修改用户成功！'};
-                  res.json(result);
-              }
+                var result;
+                if (err) {
+                    result = {'code':0,'msg':'修改用户失败：' + err};
+                    res.json(result);
+                }  else {
+                    result = {'code':1,'msg':'修改用户成功！'};
+                    res.json(result);
+                }
             });
         } else {
             var result = {'code':0,'msg':'要修改的用户可能不存在！'};
             res.json(result);
         }
     });
-}
+};
 
 //根据id查询用户
 exports.getUserById = function(req, res) {
@@ -99,14 +117,14 @@ exports.getUserById = function(req, res) {
            return;
        }
         if (user) {
-            var result = {'code':1,'data':user};
+            result = {'code':1,'data':user};
             res.json(result);
         } else {
             res.json(result);
         }
-    })
+    });
 
-}
+};
 
 //显示用户分页列表
 exports.user_list = function(req, res){
@@ -115,7 +133,7 @@ exports.user_list = function(req, res){
     var pageSize = 3;
     var queryParm = {};
     //进行多条件的拼装
-    if (queryName && queryName.trim() != "") {
+    if (queryName && queryName.trim() !== "") {
          //如果用户输入了姓名
         queryParm.userName = new RegExp(queryName);
     }
@@ -164,8 +182,8 @@ exports.getState = function(req, res){
 //退出系统（这个方法应该返回json，我这仅仅为演示，直接返回登录页面了）
 exports.logout = function(req, res){
     req.session.user_key = null;
-    res.redirect("/")
-}
+    res.redirect("/");
+};
 
 //登录系统
 exports.login = function(req, res){
@@ -175,7 +193,7 @@ exports.login = function(req, res){
     var loginUser;
 
     User.findOne({loginCode:req.query.uname},function(err, user) {
-        if (err) {commonsFun.handleError(err)};
+        if (err) {commonsFun.handleError(err);}
         if (user && user.password == req.query.pwd) {
             req.session.user_key = user;
             res.send(JSON.stringify({code:1,name:user.userName}));

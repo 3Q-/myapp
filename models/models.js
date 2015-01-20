@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var conf = require('../conf');
-
 //连接是如何管理的，是否在这连接，有待深入研究？？？
 mongoose.connect(conf.dbUrl);
 var Schema  = mongoose.Schema;
@@ -8,10 +7,10 @@ var Schema  = mongoose.Schema;
 var userSchema = new Schema({
     email:{type:String},
     name:{type:String},
-	age:{type:Number,min:0, max:120}
+	age:{type:Number,min:0, max:120},
     password:{type:String},
     picPath:{type:String},
-	time:{type:Date, default:Date.now},
+	date:{type:Date, default:Date.now},
     birthDay:{type:Date},
     status:{type:boolean, default:true}
 });

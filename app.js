@@ -67,8 +67,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-console.log('good %d', 1000);
-
 app.set('port', process.env.PORT || 8888);
 app.listen(app.get('port'),function(){
     log.info('server running at '+app.get('port')+'  go  go go go..............................');
