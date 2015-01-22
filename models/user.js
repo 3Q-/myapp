@@ -1,5 +1,7 @@
-var mongodb = require('./models');
+var models = require('./models');
+var User = model.User;
 //首页
+
 exports.index = function(req, res){
     //无缓存，应尽量避免以这种方式发回文件
     res.sendfile("public\\login.html");

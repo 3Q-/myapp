@@ -15,6 +15,5 @@ var userSchema = new Schema({
     birthDay:{type:Date},
     status:{type:boolean, default:true}
 });
-
 //定义集合,其中myUser是数据集的名称
 exports.User =  mongoose.model("User", userSchema);
