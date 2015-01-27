@@ -10,8 +10,8 @@ var User = require('models').User;
     //birthDay:{type:Date},
     //status:{type:boolean, default:true}
 
-
 //首页
+
 exports.index = function(req, res){
     //无缓存，应尽量避免以这种方式发回文件
     res.sendfile("public\\login.html");
@@ -141,7 +141,7 @@ exports.user_list = function(req, res){
          if (err) {
              commonsFun.handleError(err, '取用户分页数据失败！' , res);
              return;
-         };
+         }
          if (userCount > 0 ) {
              //查到了数据
              User.find(queryParm)
@@ -153,7 +153,7 @@ exports.user_list = function(req, res){
                      if (err) {
                          commonsFun.handleError(err, '取用户分页数据失败！' , res);
                          return;
-                     };
+                     }
                      var p = new Page(pno, pageSize, userCount, users);
                      var result = {'code':1,'page':p};
                      res.json(result);
@@ -173,7 +173,7 @@ exports.getState = function(req, res){
     var  resultJson ;
     if (user) {
         resultJson = {code:1,name:user.userName};
-    }  else {
+    }else{
         resultJson =  {code:0,msg:'对不起，您没有登录！'};
     }
     res.json(resultJson);
