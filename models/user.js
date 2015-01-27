@@ -1,5 +1,5 @@
 var mongodb = require('./models');
-var User = require(models).User;
+var User = require('models').User;
 
     //email:{type:String},
     //name:{type:String},

@@ -3,17 +3,17 @@ var router = express.Router();
 var uutil = require('../lib/uutil');
 var render = uutil.render;
 var log = require('../lib/log.js').logger('users.js');
+var redis = require('redis');
+var bcrypt = require('bcrypt');
+var rdb = redis.createClient();
 
 /* GET users listing. */
-router.get('/', function(req, res) {
-  res.send('respond with a resource');
-}).get('/login', function(req, res) {
-    res.redirect('/');
-  //res.end('respond with a resource');
+router
+.get('/', function(req, res) {
+    log.info('访问注册');
+    render(req, res, 'register',{title:'Register'});
 })
-.post('/login', function(req, res) {
-})
-.get('/register', function(req, res){
+.post('/', function(req, res){
     log.info('访问注册');
     render(req, res, 'register',{title:'Register'});
 });

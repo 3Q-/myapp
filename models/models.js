@@ -9,7 +9,7 @@ var userSchema = new Schema({
     name:{type:String},
 	age:{type:Number,min:0, max:120},
     password:{type:String},
-    picPath:{type:String},
+    pic:{type:String},
 	date:{type:Date, default:Date.now},
     birthDay:{type:Date},
     status:{type:boolean, default:true}
