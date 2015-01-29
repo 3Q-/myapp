@@ -5,7 +5,7 @@ var render = uutil.render;
 
 exports.index = function(req, res){
     var obj = {title:'express'};
-    user = req.session.user;
+    var user = req.session.user;
     console.log(user);
     render(req, res, 'index', obj);
 };

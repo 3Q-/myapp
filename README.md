@@ -1,7 +1,7 @@
 myapp
 =====
 
-study demo
+make a test
 
 this is first demo
 

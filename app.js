@@ -30,12 +30,13 @@ app.use(cookieParser());
 app.use(session({
     store: new RedisStore({
         st:'127.0.0.1',
-        prefix:'sess'
+        prefix:'sess',
+		ttl: 60*60*24*5 // 单位秒 session 5 天过期
     }),
     key : 'tickit',
     secret: 'this-is-redis-secret-fuck-you-mather-and-all',
     resave: false,
-    cookie:{maxAge:3600000*24*3, path:'/'},
+    cookie:{maxAge:3600000*24*5, path:'/'}, // 单位毫秒
     saveUninitialized:true
 }));
 app.use(express.static(path.join(__dirname, 'public')));

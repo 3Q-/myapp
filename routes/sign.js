@@ -44,7 +44,11 @@ exports.register = function(req, res, next){
         return;
     }
     if (!validator.isEmail(email)) {
-        return ep.emit('r_err', '邮箱不合法。');
+        return ep.emit('r_err', email+'邮箱不合法。');
+    }
+
+    if (!validator.isLength(password, 8)) {
+        return ep.emit('r_err', '密码长度不够');
     }
 
     User.getUserByEmail(email, function(err, user){
@@ -53,7 +57,7 @@ exports.register = function(req, res, next){
             return next(err); 
         }
         if(user && user.email === email){
-            ep.emit('r_err', '邮箱已被使用。');
+            ep.emit('r_err',email+'邮箱已被使用。');
             return;
         }
         tools.bhash(password, function(err, hash){
@@ -67,7 +71,7 @@ exports.register = function(req, res, next){
                     log.error('------------ 新用户注册时信息保存报错 -------------');
                     return next(err);
                 }
-                log.error('------------ 新用户',user.email,'注册成功 -------------');
+                log.debug('------------ 新用户',user.email,'注册成功 -------------');
                 req.session.user = user;
                 res.redirect('/');
             });
