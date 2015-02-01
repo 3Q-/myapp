@@ -12,6 +12,8 @@ var routes = require('./routes/index');
 var conf = require('./conf');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+var messages = require('./lib/messages');
+var user = require('./lib/user');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -39,6 +41,9 @@ app.use(session({
     cookie:{maxAge:3600000*24*5, path:'/'}, // 单位毫秒
     saveUninitialized:true
 }));
+app.use(user);
+app.use(messages);
+
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(favicon());
 

@@ -6,12 +6,14 @@ var UserSchema = new Schema({
     name:{type:String},
     password:{type:String},
     pic:{type:String},
+    salt:{type:String},
     date:{type:Date, default:Date.now},
     birthDay:{type:Date},
     status:{type:Boolean, default:true},
     url: { type: String },
     location: { type: String },
-    weibo: { type: String }
+    weibo: { type: String },
+    power: { type: Number, default:0 }
 });
 
 UserSchema.index({email: 1}, {unique: true});
