@@ -66,6 +66,12 @@ app.use(function(req, res, next){
 app.use(routes);
 
 app.set('port', process.env.PORT || 8888);
-app.listen(app.get('port'),function(){
+var server = app.listen(app.get('port'),function(){
     log.info('server running at '+app.get('port')+'  go  go go go..............................');
 });
+
+require('./chat_server').listen(server);
+
+
+
+

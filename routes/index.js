@@ -3,6 +3,7 @@ var server = require('./server');
 var sign = require('./sign');
 var user = require('./user');
 var admin = require('./admin');
+var blessingswish = require('./blessingswish');
 var log = require('../lib/log.js').logger('roters/index.js');
 var router = express.Router();
 
@@ -28,5 +29,8 @@ var router = express.Router();
     router.post('/register', sign.register); // 提交注册
     router.post('/logout', sign.logout); // 退出
     router.get('/admin', admin.index); //后台
+
+
+    router.get('/blessingswish', blessingswish.index); // 聊天
 
 module.exports = router;

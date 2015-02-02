@@ -11,3 +11,6 @@ exports.index = function(req, res){
     console.log(user);
     render(req, res, 'index', obj);
 };
+
+
+
