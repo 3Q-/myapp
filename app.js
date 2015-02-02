@@ -12,6 +12,8 @@ var routes = require('./routes/index');
 var conf = require('./conf');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+var messages = require('./lib/messages');
+var methodOverride = require('method-override');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,12 +23,12 @@ app.set('view engine', 'html');
 ejs.open = '{{';
 ejs.close = '}}';
 
-// uncomment after placing your favicon in /public
-//app.use(logger('dev'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(methodOverride());
+app.use(cookieParser('xiexie'));
 app.use(session({
     store: new RedisStore({
         st:'127.0.0.1',
@@ -39,8 +41,27 @@ app.use(session({
     cookie:{maxAge:3600000*24*5, path:'/'}, // 单位毫秒
     saveUninitialized:true
 }));
-app.use(express.static(path.join(__dirname, 'public')));
-//app.use(favicon());
+
+
+app.response.message = function(msg){
+	var sess = this.req.session;
+	sess.messages = [];
+	sess.messages.push(msg);
+	return this;
+};
+app.use(function(req, res, next){
+	console.log(res.locals.user);
+	var sess  =  req.session || {};
+	sess['messages'] = sess['messages'] || [];
+	res.locals.messages = sess['messages'];
+	res.locals.hasMessages = !! sess['messages'].length;
+	next();
+});
+
+
+
+
+//app.use(messages);
 
 app.use(routes);
 
