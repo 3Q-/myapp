@@ -5,7 +5,7 @@ var validator = require('validator');
 var dao = require('../dao');
 var User = dao.User;
 var eve = require('eventproxy');
-var bcrypt = require('bcrypt');
+//var bcrypt = require('bcrypt');
 var tools = require('../lib/tools');
 /* GET users listing. */
 
@@ -57,7 +57,7 @@ exports.login = function(req, res, next){
                 return ep.emit('l_err', '程序问题 登陆不了密码不对赶紧处理');
             }
             if(hash === user.password){
-                var refer = req.session._loginReferer || '/', i;
+                var refer = req.session._loginReferer || '/', i, len;
                 for (i = 0, len = notJump.length; i !== len; ++i) {
                     if (refer.indexOf(notJump[i]) >= 0) {
                         refer = '/';
@@ -145,4 +145,5 @@ exports.logout = function(req, res, next){
     req.session.destroy();
     res.clearCookie('tickit', { path: '/' });
     res.redirect('/');
+    next();
 };

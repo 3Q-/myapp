@@ -10,8 +10,8 @@ var User = models.User;
  * @param {Function} callback 回调函数
  */
 exports.getUsersByEmails = function (emails, fn) {
-  if (names.length === 0) {
-    return callback(null, []);
+  if (emails.length === 0) {
+    return fn(null, []);
   }
   User.find({ email: { $in: emails } }, fn);
 };
@@ -87,7 +87,7 @@ exports.getUsersByQuery = function (query, opt, fn) {
  * @param {Function} callback 回调函数
  */
 exports.getUserByNameAndKey = function (loginname, key, fn) {
-    User.findOne({loginname: loginname, retrieve_key: key}, fn);
+    User.findOne({loginname: loginname, 'retrieve_key': key}, fn);
 };
 
 exports.save = function (obj, fn) {

@@ -4,6 +4,7 @@ var render = uutil.render;
 /* GET home page. */
 
 exports.index = function(req, res){
-    console.log(req.user);
-    render(req, res, 'index', {title:'shit'});
+    var obj = {title:'express'};
+    log.info('index');
+    render(req, res, 'index', obj);
 };
