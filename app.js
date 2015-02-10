@@ -24,7 +24,7 @@ ejs.open = '{{';
 ejs.close = '}}';
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(''));
+//app.use(favicon(''));
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

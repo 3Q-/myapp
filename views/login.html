@@ -1,18 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{=title}}</title>
-</head>
+<html>
+  <head>
+    <title>用户登录</title>
+	<meta charset="utf-8">
+
+    <link href="http://s.xiexie.com/static/css/??bt/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style type="text/css">
+			.panel-body{
+				padding: 30px 50px 0 50px;
+
+			}
+			.form-group{
+				margin-bottom: 35px;
+			}
+			.panel-title{
+				font-size: 24px;
+				font-weight: bold;
+			}
+		</style>
+  </head>
 <body>
-    <h1>{{=title}}</h1>
-    <a href="/register">register</a>
+<div class="container web-body" style="margin-top:100px;width: 900px;">
     {{include messages.html}}
-    <p>Fill in thd form below to sign up!</p>
-    <form action="/login" method="post">
-        <p><input type="text" name="email" value="{{=(email||'')}}" placeholder="Email" /></p>
-        <p><input type="password" name="password" value="{{=(password||'')}}" placeholder="Password" /></p>
-        <p><input type="submit" value="Sign Up" /></p>
-    </form>
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="height: 50px;">
+                    <div class="panel-title" style="text-align: left">用户登录</div>
+                </div>
+                <div class="panel-body">
+                    <form action="/login" class="form-horizontal" role="form" method="post">
+                        <div class="form-group">
+                            <input id="username" value="" type="text" class="form-control" name="email" placeholder="邮箱/手机号码" />
+                        </div>
+                        <div class="form-group">
+                            <input id="password" value="" type="password" class="form-control" name="password" autocomplete="off" placeholder="密码" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-success btn-block" value="登 陆" />
+                            <a href="register" class="btn btn-primary" style="float: right;margin-top: 20px;">注 册</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="{{=settings.env.js}}/??require.min.js,jquery.min.js,bootstrap.min.js"></script>
 </body>
 </html>
+
+

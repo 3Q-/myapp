@@ -84,15 +84,15 @@ exports.register = function(req, res, next){
     var email = validator.trim(req.body.email).toLowerCase();
     var password = validator.trim(req.body.password);
 
-
     var ep = new eve();
     ep.fail(next);
     ep.on('r_err', function(msg){
+        console.log(res.messages);
         res.status(422); 
-        console.log(msg);
+        log.error(msg);
+        //console.log(msg);
         res.render('register', {
             title: 'Register',
-            error: msg, 
             email: email,
             password: password
         });
@@ -100,7 +100,7 @@ exports.register = function(req, res, next){
 
     if (!validator.isEmail(email)) {
         res.message('请输入正确邮箱!');
-        return ep.emit('r_err', email+' 不是邮箱合法。');
+        return ep.emit('r_err', email+' 不是合法邮箱。');
     }
 
     if (!validator.isLength(password, 8)) {
