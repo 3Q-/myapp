@@ -4,7 +4,6 @@ var sign = require('./sign');
 var user = require('./user');
 var admin = require('./admin');
 var blessingswish = require('./blessingswish');
-var log = require('../lib/log.js').logger('roters/index.js');
 var router = express.Router();
 
 
@@ -27,7 +26,9 @@ var router = express.Router();
     router.post('/login', sign.login);
     router.get('/register', sign.showRegister); // 注册
     router.post('/register', sign.register); // 提交注册
-    router.post('/logout', sign.logout); // 退出
+    router.get('/logout', sign.logout); // 退出
+
+
     router.get('/admin', admin.index); //后台
 
 

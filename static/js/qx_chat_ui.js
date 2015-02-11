@@ -50,7 +50,8 @@ function addUserToList(_user) {
 
 function useUserList(_user_list) {
     $(".list-table").html("");
-    for (var i = 0; i < _user_list.length; i++) {
+    var i;
+    for (i = 0; i < _user_list.length; i++) {
         addUserToList(_user_list[i]);
     }
     updateListCount();
@@ -63,12 +64,12 @@ function updateListCount() {
 
 //各种元素响应---------------------------------------------------------
 function onClickSendMessage() {
-    if ('' == $.cookie('chat_nickname') || null == $.cookie('chat_nickname')) {
+    if ('' === $.cookie('chat_nickname') || null === $.cookie('chat_nickname')) {
         return $('#login-modal').modal('show');
     }
     var edit = $("#input-edit");
     var content = edit.val();
-    if ("" == content) {
+    if ("" === content) {
         return;
     }
     say(content);
@@ -79,7 +80,7 @@ function onClickApplyNickname() {
 	var nickname_edit = $('#nickname-edit');
 	var nickname_error = $("#nickname-error");
     var name = nickname_edit.val();
-    if ("" == name) {
+    if ("" === name) {
 	    nickname_error.text("请填写昵称。");
 	    nickname_error.show();
 	    nickname_edit.focus();
@@ -124,13 +125,13 @@ $("#login-modal").on("shown.bs.modal", function (_event) {
 });
 
 $('#input-edit').keydown(function(_event) {
-   if(13 == _event.keyCode) {
+   if(13 === _event.keyCode) {
        onClickSendMessage();
    }
 });
 
 $('#nickname-edit').keydown(function(_event) {
-    if(13 == _event.keyCode) {
+    if(13 === _event.keyCode) {
         onClickApplyNickname();
     }
 });

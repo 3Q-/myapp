@@ -7,7 +7,8 @@ var xssEscape = require('xss-escape');
 var nickname_list = [];
 
 function HasNickname(_nickname) {
-    for (var i = 0; i < nickname_list.length; i++) {
+    var i, len = nickname_list.length;
+    for (i = 0; i < len; i++) {
         if (nickname_list[i] == _nickname) {
             return true;
         }
@@ -16,7 +17,8 @@ function HasNickname(_nickname) {
 }
 
 function RemoveNickname(_nickname) {
-    for (var i = 0; i < nickname_list.length; i++) {
+    var i, len = nickname_list.length;
+    for (i = 0; i < len; i++) {
         if (nickname_list[i] == _nickname)
             nickname_list.splice(i, 1);
     }
@@ -30,7 +32,7 @@ io.on('connection', function (_socket) {
 
     _socket.on('disconnect', function () {
         console.log(_socket.id + ': disconnect');
-        if (_socket.nickname != null && _socket.nickname != "") {
+        if (_socket.nickname !== null && _socket.nickname !== "") {
             _socket.broadcast.emit('user_quit', _socket.nickname);
             RemoveNickname(_socket.nickname);
         }
@@ -53,7 +55,7 @@ io.on('connection', function (_socket) {
         }
 
         var old_name = "";
-        if (_socket.nickname != "" && _socket.nickname != null) {
+        if (_socket.nickname !== "" && _socket.nickname !== null) {
             old_name = _socket.nickname;
             RemoveNickname(old_name);
         }
@@ -64,15 +66,15 @@ io.on('connection', function (_socket) {
         console.log(nickname_list);
 
         _socket.emit('change_nickname_done', old_name, _nickname);
-        if (old_name == "") {
-            return _socket.broadcast.emit('user_join', _nickname)
+        if (old_name === "") {
+            return _socket.broadcast.emit('user_join', _nickname);
         } else {
-            return _socket.broadcast.emit('user_change_nickname', old_name, _nickname)
+            return _socket.broadcast.emit('user_change_nickname', old_name, _nickname);
         }
     });
 
     _socket.on('say', function (_content) {
-        if ("" == _socket.nickname || null == _socket.nickname) {
+        if ("" === _socket.nickname || null === _socket.nickname) {
             return _socket.emit('need_nickname');
         }
         _content = _content.trim();

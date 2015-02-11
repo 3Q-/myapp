@@ -4,13 +4,7 @@ var render = uutil.render;
 /* GET home page. */
 
 exports.index = function(req, res){
-
     var obj = {title:'express'};
-    var user = req.session ? req.session.user : {};
-
-    console.log(user);
+    log.info('index');
     render(req, res, 'index', obj);
 };
-
-
-

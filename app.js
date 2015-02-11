@@ -6,13 +6,13 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var app = express();
 var log = require('./lib/log.js').logger('app.js');
-var render = require('./lib/uutil').render;
 var compression = require('compression');
 var routes = require('./routes/index');
 var conf = require('./conf');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 var messages = require('./lib/messages');
+var user = require('./lib/user');
 var methodOverride = require('method-override');
 
 // view engine setup
@@ -24,6 +24,7 @@ ejs.open = '{{';
 ejs.close = '}}';
 
 app.use(express.static(path.join(__dirname, 'public')));
+//app.use(favicon(''));
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -42,27 +43,9 @@ app.use(session({
     saveUninitialized:true
 }));
 
-
-app.response.message = function(msg){
-	var sess = this.req.session;
-	sess.messages = [];
-	sess.messages.push(msg);
-	return this;
-};
-app.use(function(req, res, next){
-	console.log(res.locals.user);
-	var sess  =  req.session || {};
-	sess['messages'] = sess['messages'] || [];
-	res.locals.messages = sess['messages'];
-	res.locals.hasMessages = !! sess['messages'].length;
-	next();
-});
-
-
-
-
-//app.use(messages);
-
+app.use(user);
+app.use(messages);
+//app.use(favicon());
 app.use(routes);
 app.set('port', process.env.PORT || 8888);
 var server = app.listen(app.get('port'),function(){
@@ -70,7 +53,3 @@ var server = app.listen(app.get('port'),function(){
 });
 
 require('./chat_server').listen(server);
-
-
-
-

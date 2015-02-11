@@ -2,12 +2,12 @@
  * Created by coofly on 2014/7/12.
  */
 
-var chat_server = 'http://' + location.hostname;
+var chat_server = 'http://' + location.hostname+':8888';
 console.log('server: ' + chat_server);
 var socket = io.connect(chat_server);
 
 socket.on('need_nickname', function () {
-    if (null == $.cookie('chat_nickname')) {
+    if (null === $.cookie('chat_nickname')) {
         $('#login-modal').modal('show');
     } else {
         changeNickname($.cookie('chat_nickname'));
@@ -32,7 +32,7 @@ socket.on('change_nickname_done', function (_old_name, _new_nickname) {
     $('#login-modal').modal('hide');
     $('#my-nickname').html('昵称：' + _new_nickname);
 
-    if (_old_name != null && _old_name != "") {
+    if (_old_name !== null && _old_name !== "") {
         addServerMessage(getLocalHMS(), '[' + _old_name + '] 改名为 [' + _new_nickname + ']');
     }
     updateListCount();
