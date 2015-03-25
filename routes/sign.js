@@ -25,20 +25,18 @@ exports.login = function(req, res, next){
     ep.on('l_err', function(msg){
         res.status(422); 
         log.error(msg);
+        res.message(msg);
         res.render('login', {
             title: 'Login',
-            error: msg, 
             email: email,
             password: password
         });
     });
     if (!validator.isEmail(email)) {
-        res.message('请输入正确邮箱!');
         return ep.emit('l_err', email+'邮箱不合法。');
     }
     if (!validator.isLength(password, 8)) {
-        res.message('请输入8位或8位以上密码!');
-        return ep.emit('l_err', '密码长度不够');
+        return ep.emit('l_err', '请输入8位或8位以上密码!');
     }
 
     User.getUserByEmail(email, function(err, user){
@@ -47,8 +45,7 @@ exports.login = function(req, res, next){
             return next(err);
         }
         if(!user){
-            res.message('该账户不存在');
-            return ep.emit('l_err', '用户不存在');
+            return ep.emit('l_err', '该账户不存在');
         }
 
         tools.bcompare(password, user.salt, function (err, hash) {
@@ -68,7 +65,6 @@ exports.login = function(req, res, next){
                 log.debug(user.email+'登陆成功!!!!');
                 res.redirect(refer);
             }else{
-                res.message('密码不正确');
                 return ep.emit('l_err', email+'输入密码不正确');
             }
         });
@@ -76,25 +72,26 @@ exports.login = function(req, res, next){
 };
 
 exports.showRegister = function(req, res){
-    var obj = {title:'Register', password:'', email:''};
+    var obj = {title:'Register',repassword:'', password:'', email:''};
     render(req, res, 'register', obj);
 };
 
 exports.register = function(req, res, next){
     var email = validator.trim(req.body.email).toLowerCase();
     var password = validator.trim(req.body.password);
+    var repassword = validator.trim(req.body.repassword);
 
     var ep = new eve();
     ep.fail(next);
     ep.on('r_err', function(msg){
-        console.log(res.messages);
         res.status(422); 
+        res.message(msg);
         log.error(msg);
-        //console.log(msg);
         res.render('register', {
             title: 'Register',
             email: email,
-            password: password
+            password: password,
+            repassword : repassword
         });
     });
 
@@ -103,8 +100,12 @@ exports.register = function(req, res, next){
         return ep.emit('r_err', email+' 不是合法邮箱。');
     }
 
-    if (!validator.isLength(password, 8)) {
+    if (!validator.isLength(password, 8) || !validator.isLength(repassword, 8) ) {
         return ep.emit('r_err', '密码长度不够');
+    }
+
+    if (password !== repassword) {
+        return ep.emit('r_err', '两次输入的密码不一样');
     }
 
     User.getUserByEmail(email, function(err, user){
