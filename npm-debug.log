@@ -1,0 +1,739 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.2.23
+3 info using node@v0.10.8
+4 verbose read json /projects/xiexie/package.json
+5 warn package.json myapp@0.0.0 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose install where, deps [ '/projects/xiexie',
+7 verbose install   [ 'bcrypt',
+7 verbose install     'body-parser',
+7 verbose install     'colors',
+7 verbose install     'compression',
+7 verbose install     'connect-redis',
+7 verbose install     'cookie-parser',
+7 verbose install     'debug',
+7 verbose install     'ejs',
+7 verbose install     'eventproxy',
+7 verbose install     'express',
+7 verbose install     'express-session',
+7 verbose install     'figures',
+7 verbose install     'hiredis',
+7 verbose install     'log4js',
+7 verbose install     'logalot',
+7 verbose install     'method-override',
+7 verbose install     'moment',
+7 verbose install     'mongoose',
+7 verbose install     'morgan',
+7 verbose install     'redis',
+7 verbose install     'serve-favicon',
+7 verbose install     'socket.io',
+7 verbose install     'validator',
+7 verbose install     'xss-escape' ] ]
+8 verbose from cache /projects/xiexie/package.json
+9 info preinstall myapp@0.0.0
+10 verbose read json /projects/xiexie/node_modules/bcrypt/package.json
+11 verbose read json /projects/xiexie/node_modules/body-parser/package.json
+12 verbose read json /projects/xiexie/node_modules/colors/package.json
+13 verbose read json /projects/xiexie/node_modules/compression/package.json
+14 verbose read json /projects/xiexie/node_modules/connect-redis/package.json
+15 verbose read json /projects/xiexie/node_modules/cookie-parser/package.json
+16 verbose read json /projects/xiexie/node_modules/debug/package.json
+17 verbose read json /projects/xiexie/node_modules/ejs/package.json
+18 verbose read json /projects/xiexie/node_modules/eventproxy/package.json
+19 verbose read json /projects/xiexie/node_modules/express/package.json
+20 verbose read json /projects/xiexie/node_modules/express-session/package.json
+21 verbose read json /projects/xiexie/node_modules/figures/package.json
+22 verbose read json /projects/xiexie/node_modules/hiredis/package.json
+23 verbose read json /projects/xiexie/node_modules/little-logger/package.json
+24 verbose read json /projects/xiexie/node_modules/log4js/package.json
+25 verbose read json /projects/xiexie/node_modules/logalot/package.json
+26 verbose read json /projects/xiexie/node_modules/method-override/package.json
+27 verbose read json /projects/xiexie/node_modules/moment/package.json
+28 verbose read json /projects/xiexie/node_modules/mongoose/package.json
+29 verbose read json /projects/xiexie/node_modules/morgan/package.json
+30 verbose read json /projects/xiexie/node_modules/redis/package.json
+31 verbose read json /projects/xiexie/node_modules/serve-favicon/package.json
+32 verbose read json /projects/xiexie/node_modules/socket.io/package.json
+33 verbose read json /projects/xiexie/node_modules/validator/package.json
+34 verbose read json /projects/xiexie/node_modules/xss-escape/package.json
+35 verbose from cache /projects/xiexie/package.json
+36 verbose readDependencies using package.json deps
+37 verbose from cache /projects/xiexie/node_modules/bcrypt/package.json
+38 verbose from cache /projects/xiexie/node_modules/body-parser/package.json
+39 verbose from cache /projects/xiexie/node_modules/colors/package.json
+40 verbose from cache /projects/xiexie/node_modules/compression/package.json
+41 verbose from cache /projects/xiexie/node_modules/connect-redis/package.json
+42 verbose from cache /projects/xiexie/node_modules/cookie-parser/package.json
+43 verbose from cache /projects/xiexie/node_modules/debug/package.json
+44 verbose from cache /projects/xiexie/node_modules/ejs/package.json
+45 verbose from cache /projects/xiexie/node_modules/eventproxy/package.json
+46 verbose from cache /projects/xiexie/node_modules/express/package.json
+47 verbose from cache /projects/xiexie/node_modules/express-session/package.json
+48 verbose from cache /projects/xiexie/node_modules/figures/package.json
+49 verbose from cache /projects/xiexie/node_modules/hiredis/package.json
+50 verbose from cache /projects/xiexie/node_modules/little-logger/package.json
+51 verbose from cache /projects/xiexie/node_modules/log4js/package.json
+52 verbose from cache /projects/xiexie/node_modules/logalot/package.json
+53 verbose from cache /projects/xiexie/node_modules/method-override/package.json
+54 verbose from cache /projects/xiexie/node_modules/moment/package.json
+55 verbose from cache /projects/xiexie/node_modules/mongoose/package.json
+56 verbose from cache /projects/xiexie/node_modules/morgan/package.json
+57 verbose from cache /projects/xiexie/node_modules/redis/package.json
+58 verbose from cache /projects/xiexie/node_modules/serve-favicon/package.json
+59 verbose from cache /projects/xiexie/node_modules/socket.io/package.json
+60 verbose from cache /projects/xiexie/node_modules/validator/package.json
+61 verbose from cache /projects/xiexie/node_modules/xss-escape/package.json
+62 verbose cache add [ 'compression@^1.3.0', null ]
+63 verbose cache add name=undefined spec="compression@^1.3.0" args=["compression@^1.3.0",null]
+64 verbose parsed url { protocol: null,
+64 verbose parsed url   slashes: null,
+64 verbose parsed url   auth: null,
+64 verbose parsed url   host: null,
+64 verbose parsed url   port: null,
+64 verbose parsed url   hostname: null,
+64 verbose parsed url   hash: null,
+64 verbose parsed url   search: null,
+64 verbose parsed url   query: null,
+64 verbose parsed url   pathname: 'compression@^1.3.0',
+64 verbose parsed url   path: 'compression@^1.3.0',
+64 verbose parsed url   href: 'compression@^1.3.0' }
+65 verbose cache add name="compression" spec="^1.3.0" args=["compression","^1.3.0"]
+66 verbose parsed url { protocol: null,
+66 verbose parsed url   slashes: null,
+66 verbose parsed url   auth: null,
+66 verbose parsed url   host: null,
+66 verbose parsed url   port: null,
+66 verbose parsed url   hostname: null,
+66 verbose parsed url   hash: null,
+66 verbose parsed url   search: null,
+66 verbose parsed url   query: null,
+66 verbose parsed url   pathname: '^1.3.0',
+66 verbose parsed url   path: '^1.3.0',
+66 verbose parsed url   href: '^1.3.0' }
+67 verbose addNamed [ 'compression', '^1.3.0' ]
+68 verbose addNamed [ null, null ]
+69 verbose cache add [ 'colors@^1.0.3', null ]
+70 verbose cache add name=undefined spec="colors@^1.0.3" args=["colors@^1.0.3",null]
+71 verbose parsed url { protocol: null,
+71 verbose parsed url   slashes: null,
+71 verbose parsed url   auth: null,
+71 verbose parsed url   host: null,
+71 verbose parsed url   port: null,
+71 verbose parsed url   hostname: null,
+71 verbose parsed url   hash: null,
+71 verbose parsed url   search: null,
+71 verbose parsed url   query: null,
+71 verbose parsed url   pathname: 'colors@^1.0.3',
+71 verbose parsed url   path: 'colors@^1.0.3',
+71 verbose parsed url   href: 'colors@^1.0.3' }
+72 verbose cache add name="colors" spec="^1.0.3" args=["colors","^1.0.3"]
+73 verbose parsed url { protocol: null,
+73 verbose parsed url   slashes: null,
+73 verbose parsed url   auth: null,
+73 verbose parsed url   host: null,
+73 verbose parsed url   port: null,
+73 verbose parsed url   hostname: null,
+73 verbose parsed url   hash: null,
+73 verbose parsed url   search: null,
+73 verbose parsed url   query: null,
+73 verbose parsed url   pathname: '^1.0.3',
+73 verbose parsed url   path: '^1.0.3',
+73 verbose parsed url   href: '^1.0.3' }
+74 verbose addNamed [ 'colors', '^1.0.3' ]
+75 verbose addNamed [ null, null ]
+76 verbose cache add [ 'connect-redis@^2.2.0', null ]
+77 verbose cache add name=undefined spec="connect-redis@^2.2.0" args=["connect-redis@^2.2.0",null]
+78 verbose parsed url { protocol: null,
+78 verbose parsed url   slashes: null,
+78 verbose parsed url   auth: null,
+78 verbose parsed url   host: null,
+78 verbose parsed url   port: null,
+78 verbose parsed url   hostname: null,
+78 verbose parsed url   hash: null,
+78 verbose parsed url   search: null,
+78 verbose parsed url   query: null,
+78 verbose parsed url   pathname: 'connect-redis@^2.2.0',
+78 verbose parsed url   path: 'connect-redis@^2.2.0',
+78 verbose parsed url   href: 'connect-redis@^2.2.0' }
+79 verbose cache add name="connect-redis" spec="^2.2.0" args=["connect-redis","^2.2.0"]
+80 verbose parsed url { protocol: null,
+80 verbose parsed url   slashes: null,
+80 verbose parsed url   auth: null,
+80 verbose parsed url   host: null,
+80 verbose parsed url   port: null,
+80 verbose parsed url   hostname: null,
+80 verbose parsed url   hash: null,
+80 verbose parsed url   search: null,
+80 verbose parsed url   query: null,
+80 verbose parsed url   pathname: '^2.2.0',
+80 verbose parsed url   path: '^2.2.0',
+80 verbose parsed url   href: '^2.2.0' }
+81 verbose addNamed [ 'connect-redis', '^2.2.0' ]
+82 verbose addNamed [ null, null ]
+83 verbose already installed skipping cookie-parser@~1.3.3 /projects/xiexie
+84 silly lockFile e52f0cd9-compression-1-3-0 compression@^1.3.0
+85 verbose lock compression@^1.3.0 /home/xiexie/.npm/e52f0cd9-compression-1-3-0.lock
+86 silly lockFile b47db149-colors-1-0-3 colors@^1.0.3
+87 verbose lock colors@^1.0.3 /home/xiexie/.npm/b47db149-colors-1-0-3.lock
+88 verbose already installed skipping debug@~2.0.0 /projects/xiexie
+89 silly lockFile 6736b49b-connect-redis-2-2-0 connect-redis@^2.2.0
+90 verbose lock connect-redis@^2.2.0 /home/xiexie/.npm/6736b49b-connect-redis-2-2-0.lock
+91 info addNameTag [ 'compression', '^1.3.0' ]
+92 info addNameTag [ 'colors', '^1.0.3' ]
+93 verbose already installed skipping ejs@~0.8.5 /projects/xiexie
+94 info addNameTag [ 'connect-redis', '^2.2.0' ]
+95 verbose url raw compression
+96 verbose url resolving [ 'https://registry.npmjs.org/', './compression' ]
+97 verbose url resolved https://registry.npmjs.org/compression
+98 info trying registry request attempt 1 at 22:35:23
+99 verbose etag "6VJW7GC9UTT9YWMFKJT0SVTY9"
+100 http GET https://registry.npmjs.org/compression
+101 verbose url raw colors
+102 verbose url resolving [ 'https://registry.npmjs.org/', './colors' ]
+103 verbose url resolved https://registry.npmjs.org/colors
+104 info trying registry request attempt 1 at 22:35:23
+105 verbose etag "2BXGZRSVARLP0521Z4H796MMX"
+106 http GET https://registry.npmjs.org/colors
+107 verbose cache add [ 'express-session@^1.10.1', null ]
+108 verbose cache add name=undefined spec="express-session@^1.10.1" args=["express-session@^1.10.1",null]
+109 verbose parsed url { protocol: null,
+109 verbose parsed url   slashes: null,
+109 verbose parsed url   auth: null,
+109 verbose parsed url   host: null,
+109 verbose parsed url   port: null,
+109 verbose parsed url   hostname: null,
+109 verbose parsed url   hash: null,
+109 verbose parsed url   search: null,
+109 verbose parsed url   query: null,
+109 verbose parsed url   pathname: 'express-session@^1.10.1',
+109 verbose parsed url   path: 'express-session@^1.10.1',
+109 verbose parsed url   href: 'express-session@^1.10.1' }
+110 verbose cache add name="express-session" spec="^1.10.1" args=["express-session","^1.10.1"]
+111 verbose parsed url { protocol: null,
+111 verbose parsed url   slashes: null,
+111 verbose parsed url   auth: null,
+111 verbose parsed url   host: null,
+111 verbose parsed url   port: null,
+111 verbose parsed url   hostname: null,
+111 verbose parsed url   hash: null,
+111 verbose parsed url   search: null,
+111 verbose parsed url   query: null,
+111 verbose parsed url   pathname: '^1.10.1',
+111 verbose parsed url   path: '^1.10.1',
+111 verbose parsed url   href: '^1.10.1' }
+112 verbose addNamed [ 'express-session', '^1.10.1' ]
+113 verbose addNamed [ null, null ]
+114 silly lockFile ef4424ed-express-session-1-10-1 express-session@^1.10.1
+115 verbose lock express-session@^1.10.1 /home/xiexie/.npm/ef4424ed-express-session-1-10-1.lock
+116 verbose cache add [ 'eventproxy@^0.3.2', null ]
+117 verbose cache add name=undefined spec="eventproxy@^0.3.2" args=["eventproxy@^0.3.2",null]
+118 verbose parsed url { protocol: null,
+118 verbose parsed url   slashes: null,
+118 verbose parsed url   auth: null,
+118 verbose parsed url   host: null,
+118 verbose parsed url   port: null,
+118 verbose parsed url   hostname: null,
+118 verbose parsed url   hash: null,
+118 verbose parsed url   search: null,
+118 verbose parsed url   query: null,
+118 verbose parsed url   pathname: 'eventproxy@^0.3.2',
+118 verbose parsed url   path: 'eventproxy@^0.3.2',
+118 verbose parsed url   href: 'eventproxy@^0.3.2' }
+119 verbose cache add name="eventproxy" spec="^0.3.2" args=["eventproxy","^0.3.2"]
+120 verbose parsed url { protocol: null,
+120 verbose parsed url   slashes: null,
+120 verbose parsed url   auth: null,
+120 verbose parsed url   host: null,
+120 verbose parsed url   port: null,
+120 verbose parsed url   hostname: null,
+120 verbose parsed url   hash: null,
+120 verbose parsed url   search: null,
+120 verbose parsed url   query: null,
+120 verbose parsed url   pathname: '^0.3.2',
+120 verbose parsed url   path: '^0.3.2',
+120 verbose parsed url   href: '^0.3.2' }
+121 verbose addNamed [ 'eventproxy', '^0.3.2' ]
+122 verbose addNamed [ null, null ]
+123 silly lockFile ef8167d2-eventproxy-0-3-2 eventproxy@^0.3.2
+124 verbose lock eventproxy@^0.3.2 /home/xiexie/.npm/ef8167d2-eventproxy-0-3-2.lock
+125 verbose cache add [ 'figures@^1.3.5', null ]
+126 verbose cache add name=undefined spec="figures@^1.3.5" args=["figures@^1.3.5",null]
+127 verbose parsed url { protocol: null,
+127 verbose parsed url   slashes: null,
+127 verbose parsed url   auth: null,
+127 verbose parsed url   host: null,
+127 verbose parsed url   port: null,
+127 verbose parsed url   hostname: null,
+127 verbose parsed url   hash: null,
+127 verbose parsed url   search: null,
+127 verbose parsed url   query: null,
+127 verbose parsed url   pathname: 'figures@^1.3.5',
+127 verbose parsed url   path: 'figures@^1.3.5',
+127 verbose parsed url   href: 'figures@^1.3.5' }
+128 verbose cache add name="figures" spec="^1.3.5" args=["figures","^1.3.5"]
+129 verbose parsed url { protocol: null,
+129 verbose parsed url   slashes: null,
+129 verbose parsed url   auth: null,
+129 verbose parsed url   host: null,
+129 verbose parsed url   port: null,
+129 verbose parsed url   hostname: null,
+129 verbose parsed url   hash: null,
+129 verbose parsed url   search: null,
+129 verbose parsed url   query: null,
+129 verbose parsed url   pathname: '^1.3.5',
+129 verbose parsed url   path: '^1.3.5',
+129 verbose parsed url   href: '^1.3.5' }
+130 verbose addNamed [ 'figures', '^1.3.5' ]
+131 verbose addNamed [ null, null ]
+132 silly lockFile e860dedd-figures-1-3-5 figures@^1.3.5
+133 verbose lock figures@^1.3.5 /home/xiexie/.npm/e860dedd-figures-1-3-5.lock
+134 verbose already installed skipping express@~4.9.0 /projects/xiexie
+135 verbose cache add [ 'hiredis@^0.1.17', null ]
+136 verbose cache add name=undefined spec="hiredis@^0.1.17" args=["hiredis@^0.1.17",null]
+137 verbose parsed url { protocol: null,
+137 verbose parsed url   slashes: null,
+137 verbose parsed url   auth: null,
+137 verbose parsed url   host: null,
+137 verbose parsed url   port: null,
+137 verbose parsed url   hostname: null,
+137 verbose parsed url   hash: null,
+137 verbose parsed url   search: null,
+137 verbose parsed url   query: null,
+137 verbose parsed url   pathname: 'hiredis@^0.1.17',
+137 verbose parsed url   path: 'hiredis@^0.1.17',
+137 verbose parsed url   href: 'hiredis@^0.1.17' }
+138 verbose cache add name="hiredis" spec="^0.1.17" args=["hiredis","^0.1.17"]
+139 verbose parsed url { protocol: null,
+139 verbose parsed url   slashes: null,
+139 verbose parsed url   auth: null,
+139 verbose parsed url   host: null,
+139 verbose parsed url   port: null,
+139 verbose parsed url   hostname: null,
+139 verbose parsed url   hash: null,
+139 verbose parsed url   search: null,
+139 verbose parsed url   query: null,
+139 verbose parsed url   pathname: '^0.1.17',
+139 verbose parsed url   path: '^0.1.17',
+139 verbose parsed url   href: '^0.1.17' }
+140 verbose addNamed [ 'hiredis', '^0.1.17' ]
+141 verbose addNamed [ null, null ]
+142 silly lockFile adcf7202-hiredis-0-1-17 hiredis@^0.1.17
+143 verbose lock hiredis@^0.1.17 /home/xiexie/.npm/adcf7202-hiredis-0-1-17.lock
+144 verbose cache add [ 'log4js@^0.6.21', null ]
+145 verbose cache add name=undefined spec="log4js@^0.6.21" args=["log4js@^0.6.21",null]
+146 verbose parsed url { protocol: null,
+146 verbose parsed url   slashes: null,
+146 verbose parsed url   auth: null,
+146 verbose parsed url   host: null,
+146 verbose parsed url   port: null,
+146 verbose parsed url   hostname: null,
+146 verbose parsed url   hash: null,
+146 verbose parsed url   search: null,
+146 verbose parsed url   query: null,
+146 verbose parsed url   pathname: 'log4js@^0.6.21',
+146 verbose parsed url   path: 'log4js@^0.6.21',
+146 verbose parsed url   href: 'log4js@^0.6.21' }
+147 verbose cache add name="log4js" spec="^0.6.21" args=["log4js","^0.6.21"]
+148 verbose parsed url { protocol: null,
+148 verbose parsed url   slashes: null,
+148 verbose parsed url   auth: null,
+148 verbose parsed url   host: null,
+148 verbose parsed url   port: null,
+148 verbose parsed url   hostname: null,
+148 verbose parsed url   hash: null,
+148 verbose parsed url   search: null,
+148 verbose parsed url   query: null,
+148 verbose parsed url   pathname: '^0.6.21',
+148 verbose parsed url   path: '^0.6.21',
+148 verbose parsed url   href: '^0.6.21' }
+149 verbose addNamed [ 'log4js', '^0.6.21' ]
+150 verbose addNamed [ null, null ]
+151 silly lockFile b3e34030-log4js-0-6-21 log4js@^0.6.21
+152 verbose lock log4js@^0.6.21 /home/xiexie/.npm/b3e34030-log4js-0-6-21.lock
+153 verbose cache add [ 'logalot@^2.1.0', null ]
+154 verbose cache add name=undefined spec="logalot@^2.1.0" args=["logalot@^2.1.0",null]
+155 verbose parsed url { protocol: null,
+155 verbose parsed url   slashes: null,
+155 verbose parsed url   auth: null,
+155 verbose parsed url   host: null,
+155 verbose parsed url   port: null,
+155 verbose parsed url   hostname: null,
+155 verbose parsed url   hash: null,
+155 verbose parsed url   search: null,
+155 verbose parsed url   query: null,
+155 verbose parsed url   pathname: 'logalot@^2.1.0',
+155 verbose parsed url   path: 'logalot@^2.1.0',
+155 verbose parsed url   href: 'logalot@^2.1.0' }
+156 verbose cache add name="logalot" spec="^2.1.0" args=["logalot","^2.1.0"]
+157 verbose parsed url { protocol: null,
+157 verbose parsed url   slashes: null,
+157 verbose parsed url   auth: null,
+157 verbose parsed url   host: null,
+157 verbose parsed url   port: null,
+157 verbose parsed url   hostname: null,
+157 verbose parsed url   hash: null,
+157 verbose parsed url   search: null,
+157 verbose parsed url   query: null,
+157 verbose parsed url   pathname: '^2.1.0',
+157 verbose parsed url   path: '^2.1.0',
+157 verbose parsed url   href: '^2.1.0' }
+158 verbose addNamed [ 'logalot', '^2.1.0' ]
+159 verbose addNamed [ null, null ]
+160 silly lockFile 2afc7c0f-logalot-2-1-0 logalot@^2.1.0
+161 verbose lock logalot@^2.1.0 /home/xiexie/.npm/2afc7c0f-logalot-2-1-0.lock
+162 verbose cache add [ 'method-override@^2.3.1', null ]
+163 verbose cache add name=undefined spec="method-override@^2.3.1" args=["method-override@^2.3.1",null]
+164 verbose parsed url { protocol: null,
+164 verbose parsed url   slashes: null,
+164 verbose parsed url   auth: null,
+164 verbose parsed url   host: null,
+164 verbose parsed url   port: null,
+164 verbose parsed url   hostname: null,
+164 verbose parsed url   hash: null,
+164 verbose parsed url   search: null,
+164 verbose parsed url   query: null,
+164 verbose parsed url   pathname: 'method-override@^2.3.1',
+164 verbose parsed url   path: 'method-override@^2.3.1',
+164 verbose parsed url   href: 'method-override@^2.3.1' }
+165 verbose cache add name="method-override" spec="^2.3.1" args=["method-override","^2.3.1"]
+166 verbose parsed url { protocol: null,
+166 verbose parsed url   slashes: null,
+166 verbose parsed url   auth: null,
+166 verbose parsed url   host: null,
+166 verbose parsed url   port: null,
+166 verbose parsed url   hostname: null,
+166 verbose parsed url   hash: null,
+166 verbose parsed url   search: null,
+166 verbose parsed url   query: null,
+166 verbose parsed url   pathname: '^2.3.1',
+166 verbose parsed url   path: '^2.3.1',
+166 verbose parsed url   href: '^2.3.1' }
+167 verbose addNamed [ 'method-override', '^2.3.1' ]
+168 verbose addNamed [ null, null ]
+169 silly lockFile f195831d-method-override-2-3-1 method-override@^2.3.1
+170 verbose lock method-override@^2.3.1 /home/xiexie/.npm/f195831d-method-override-2-3-1.lock
+171 verbose cache add [ 'moment@^2.8.4', null ]
+172 verbose cache add name=undefined spec="moment@^2.8.4" args=["moment@^2.8.4",null]
+173 verbose parsed url { protocol: null,
+173 verbose parsed url   slashes: null,
+173 verbose parsed url   auth: null,
+173 verbose parsed url   host: null,
+173 verbose parsed url   port: null,
+173 verbose parsed url   hostname: null,
+173 verbose parsed url   hash: null,
+173 verbose parsed url   search: null,
+173 verbose parsed url   query: null,
+173 verbose parsed url   pathname: 'moment@^2.8.4',
+173 verbose parsed url   path: 'moment@^2.8.4',
+173 verbose parsed url   href: 'moment@^2.8.4' }
+174 verbose cache add name="moment" spec="^2.8.4" args=["moment","^2.8.4"]
+175 verbose parsed url { protocol: null,
+175 verbose parsed url   slashes: null,
+175 verbose parsed url   auth: null,
+175 verbose parsed url   host: null,
+175 verbose parsed url   port: null,
+175 verbose parsed url   hostname: null,
+175 verbose parsed url   hash: null,
+175 verbose parsed url   search: null,
+175 verbose parsed url   query: null,
+175 verbose parsed url   pathname: '^2.8.4',
+175 verbose parsed url   path: '^2.8.4',
+175 verbose parsed url   href: '^2.8.4' }
+176 verbose addNamed [ 'moment', '^2.8.4' ]
+177 verbose addNamed [ null, null ]
+178 silly lockFile a9ddb77c-moment-2-8-4 moment@^2.8.4
+179 verbose lock moment@^2.8.4 /home/xiexie/.npm/a9ddb77c-moment-2-8-4.lock
+180 verbose cache add [ 'mongoose@^3.8.21', null ]
+181 verbose cache add name=undefined spec="mongoose@^3.8.21" args=["mongoose@^3.8.21",null]
+182 verbose parsed url { protocol: null,
+182 verbose parsed url   slashes: null,
+182 verbose parsed url   auth: null,
+182 verbose parsed url   host: null,
+182 verbose parsed url   port: null,
+182 verbose parsed url   hostname: null,
+182 verbose parsed url   hash: null,
+182 verbose parsed url   search: null,
+182 verbose parsed url   query: null,
+182 verbose parsed url   pathname: 'mongoose@^3.8.21',
+182 verbose parsed url   path: 'mongoose@^3.8.21',
+182 verbose parsed url   href: 'mongoose@^3.8.21' }
+183 verbose cache add name="mongoose" spec="^3.8.21" args=["mongoose","^3.8.21"]
+184 verbose parsed url { protocol: null,
+184 verbose parsed url   slashes: null,
+184 verbose parsed url   auth: null,
+184 verbose parsed url   host: null,
+184 verbose parsed url   port: null,
+184 verbose parsed url   hostname: null,
+184 verbose parsed url   hash: null,
+184 verbose parsed url   search: null,
+184 verbose parsed url   query: null,
+184 verbose parsed url   pathname: '^3.8.21',
+184 verbose parsed url   path: '^3.8.21',
+184 verbose parsed url   href: '^3.8.21' }
+185 verbose addNamed [ 'mongoose', '^3.8.21' ]
+186 verbose addNamed [ null, null ]
+187 silly lockFile c3e83549-mongoose-3-8-21 mongoose@^3.8.21
+188 verbose lock mongoose@^3.8.21 /home/xiexie/.npm/c3e83549-mongoose-3-8-21.lock
+189 verbose already installed skipping morgan@~1.3.0 /projects/xiexie
+190 verbose cache add [ 'redis@^0.12.1', null ]
+191 verbose cache add name=undefined spec="redis@^0.12.1" args=["redis@^0.12.1",null]
+192 verbose parsed url { protocol: null,
+192 verbose parsed url   slashes: null,
+192 verbose parsed url   auth: null,
+192 verbose parsed url   host: null,
+192 verbose parsed url   port: null,
+192 verbose parsed url   hostname: null,
+192 verbose parsed url   hash: null,
+192 verbose parsed url   search: null,
+192 verbose parsed url   query: null,
+192 verbose parsed url   pathname: 'redis@^0.12.1',
+192 verbose parsed url   path: 'redis@^0.12.1',
+192 verbose parsed url   href: 'redis@^0.12.1' }
+193 verbose cache add name="redis" spec="^0.12.1" args=["redis","^0.12.1"]
+194 verbose parsed url { protocol: null,
+194 verbose parsed url   slashes: null,
+194 verbose parsed url   auth: null,
+194 verbose parsed url   host: null,
+194 verbose parsed url   port: null,
+194 verbose parsed url   hostname: null,
+194 verbose parsed url   hash: null,
+194 verbose parsed url   search: null,
+194 verbose parsed url   query: null,
+194 verbose parsed url   pathname: '^0.12.1',
+194 verbose parsed url   path: '^0.12.1',
+194 verbose parsed url   href: '^0.12.1' }
+195 verbose addNamed [ 'redis', '^0.12.1' ]
+196 verbose addNamed [ null, null ]
+197 silly lockFile e462d765-redis-0-12-1 redis@^0.12.1
+198 verbose lock redis@^0.12.1 /home/xiexie/.npm/e462d765-redis-0-12-1.lock
+199 verbose already installed skipping serve-favicon@~2.1.3 /projects/xiexie
+200 verbose cache add [ 'socket.io@^1.3.2', null ]
+201 verbose cache add name=undefined spec="socket.io@^1.3.2" args=["socket.io@^1.3.2",null]
+202 verbose parsed url { protocol: null,
+202 verbose parsed url   slashes: null,
+202 verbose parsed url   auth: null,
+202 verbose parsed url   host: null,
+202 verbose parsed url   port: null,
+202 verbose parsed url   hostname: null,
+202 verbose parsed url   hash: null,
+202 verbose parsed url   search: null,
+202 verbose parsed url   query: null,
+202 verbose parsed url   pathname: 'socket.io@^1.3.2',
+202 verbose parsed url   path: 'socket.io@^1.3.2',
+202 verbose parsed url   href: 'socket.io@^1.3.2' }
+203 verbose cache add name="socket.io" spec="^1.3.2" args=["socket.io","^1.3.2"]
+204 verbose parsed url { protocol: null,
+204 verbose parsed url   slashes: null,
+204 verbose parsed url   auth: null,
+204 verbose parsed url   host: null,
+204 verbose parsed url   port: null,
+204 verbose parsed url   hostname: null,
+204 verbose parsed url   hash: null,
+204 verbose parsed url   search: null,
+204 verbose parsed url   query: null,
+204 verbose parsed url   pathname: '^1.3.2',
+204 verbose parsed url   path: '^1.3.2',
+204 verbose parsed url   href: '^1.3.2' }
+205 verbose addNamed [ 'socket.io', '^1.3.2' ]
+206 verbose addNamed [ null, null ]
+207 silly lockFile f3be1dbd-socket-io-1-3-2 socket.io@^1.3.2
+208 verbose lock socket.io@^1.3.2 /home/xiexie/.npm/f3be1dbd-socket-io-1-3-2.lock
+209 verbose cache add [ 'validator@^3.28.0', null ]
+210 verbose cache add name=undefined spec="validator@^3.28.0" args=["validator@^3.28.0",null]
+211 verbose parsed url { protocol: null,
+211 verbose parsed url   slashes: null,
+211 verbose parsed url   auth: null,
+211 verbose parsed url   host: null,
+211 verbose parsed url   port: null,
+211 verbose parsed url   hostname: null,
+211 verbose parsed url   hash: null,
+211 verbose parsed url   search: null,
+211 verbose parsed url   query: null,
+211 verbose parsed url   pathname: 'validator@^3.28.0',
+211 verbose parsed url   path: 'validator@^3.28.0',
+211 verbose parsed url   href: 'validator@^3.28.0' }
+212 verbose cache add name="validator" spec="^3.28.0" args=["validator","^3.28.0"]
+213 verbose parsed url { protocol: null,
+213 verbose parsed url   slashes: null,
+213 verbose parsed url   auth: null,
+213 verbose parsed url   host: null,
+213 verbose parsed url   port: null,
+213 verbose parsed url   hostname: null,
+213 verbose parsed url   hash: null,
+213 verbose parsed url   search: null,
+213 verbose parsed url   query: null,
+213 verbose parsed url   pathname: '^3.28.0',
+213 verbose parsed url   path: '^3.28.0',
+213 verbose parsed url   href: '^3.28.0' }
+214 verbose addNamed [ 'validator', '^3.28.0' ]
+215 verbose addNamed [ null, null ]
+216 silly lockFile 6d984f07-validator-3-28-0 validator@^3.28.0
+217 verbose lock validator@^3.28.0 /home/xiexie/.npm/6d984f07-validator-3-28-0.lock
+218 verbose already installed skipping xss-escape@0.0.6 /projects/xiexie
+219 verbose cache add [ 'bcrypt@^0.8.1', null ]
+220 verbose cache add name=undefined spec="bcrypt@^0.8.1" args=["bcrypt@^0.8.1",null]
+221 verbose parsed url { protocol: null,
+221 verbose parsed url   slashes: null,
+221 verbose parsed url   auth: null,
+221 verbose parsed url   host: null,
+221 verbose parsed url   port: null,
+221 verbose parsed url   hostname: null,
+221 verbose parsed url   hash: null,
+221 verbose parsed url   search: null,
+221 verbose parsed url   query: null,
+221 verbose parsed url   pathname: 'bcrypt@^0.8.1',
+221 verbose parsed url   path: 'bcrypt@^0.8.1',
+221 verbose parsed url   href: 'bcrypt@^0.8.1' }
+222 verbose cache add name="bcrypt" spec="^0.8.1" args=["bcrypt","^0.8.1"]
+223 verbose parsed url { protocol: null,
+223 verbose parsed url   slashes: null,
+223 verbose parsed url   auth: null,
+223 verbose parsed url   host: null,
+223 verbose parsed url   port: null,
+223 verbose parsed url   hostname: null,
+223 verbose parsed url   hash: null,
+223 verbose parsed url   search: null,
+223 verbose parsed url   query: null,
+223 verbose parsed url   pathname: '^0.8.1',
+223 verbose parsed url   path: '^0.8.1',
+223 verbose parsed url   href: '^0.8.1' }
+224 verbose addNamed [ 'bcrypt', '^0.8.1' ]
+225 verbose addNamed [ null, null ]
+226 silly lockFile d952fdc8-bcrypt-0-8-1 bcrypt@^0.8.1
+227 verbose lock bcrypt@^0.8.1 /home/xiexie/.npm/d952fdc8-bcrypt-0-8-1.lock
+228 verbose already installed skipping body-parser@~1.8.1 /projects/xiexie
+229 info addNameTag [ 'express-session', '^1.10.1' ]
+230 info addNameTag [ 'eventproxy', '^0.3.2' ]
+231 info addNameTag [ 'figures', '^1.3.5' ]
+232 info addNameTag [ 'hiredis', '^0.1.17' ]
+233 info addNameTag [ 'log4js', '^0.6.21' ]
+234 info addNameTag [ 'logalot', '^2.1.0' ]
+235 info addNameTag [ 'method-override', '^2.3.1' ]
+236 info addNameTag [ 'moment', '^2.8.4' ]
+237 info addNameTag [ 'mongoose', '^3.8.21' ]
+238 info addNameTag [ 'redis', '^0.12.1' ]
+239 info addNameTag [ 'socket.io', '^1.3.2' ]
+240 info addNameTag [ 'validator', '^3.28.0' ]
+241 info addNameTag [ 'bcrypt', '^0.8.1' ]
+242 verbose url raw connect-redis
+243 verbose url resolving [ 'https://registry.npmjs.org/', './connect-redis' ]
+244 verbose url resolved https://registry.npmjs.org/connect-redis
+245 info trying registry request attempt 1 at 22:35:23
+246 verbose etag "DKSXO4OXJIP7Z5WG2Q392IY7D"
+247 http GET https://registry.npmjs.org/connect-redis
+248 verbose url raw express-session
+249 verbose url resolving [ 'https://registry.npmjs.org/', './express-session' ]
+250 verbose url resolved https://registry.npmjs.org/express-session
+251 info trying registry request attempt 1 at 22:35:23
+252 verbose etag "DRAOCI27RY302K9WGRK200CEG"
+253 http GET https://registry.npmjs.org/express-session
+254 verbose url raw eventproxy
+255 verbose url resolving [ 'https://registry.npmjs.org/', './eventproxy' ]
+256 verbose url resolved https://registry.npmjs.org/eventproxy
+257 info trying registry request attempt 1 at 22:35:23
+258 verbose etag "E2JZVOFCGYVNRCYPDUHEIRG2H"
+259 http GET https://registry.npmjs.org/eventproxy
+260 verbose url raw figures
+261 verbose url resolving [ 'https://registry.npmjs.org/', './figures' ]
+262 verbose url resolved https://registry.npmjs.org/figures
+263 info trying registry request attempt 1 at 22:35:23
+264 verbose etag "8ITBDXLAQ22W9HTJHFDMJUS33"
+265 http GET https://registry.npmjs.org/figures
+266 verbose url raw hiredis
+267 verbose url resolving [ 'https://registry.npmjs.org/', './hiredis' ]
+268 verbose url resolved https://registry.npmjs.org/hiredis
+269 info trying registry request attempt 1 at 22:35:23
+270 verbose etag "17V12UX74ACZ2TSQSQN0RVS9B"
+271 http GET https://registry.npmjs.org/hiredis
+272 verbose url raw log4js
+273 verbose url resolving [ 'https://registry.npmjs.org/', './log4js' ]
+274 verbose url resolved https://registry.npmjs.org/log4js
+275 info trying registry request attempt 1 at 22:35:23
+276 verbose etag "E1T0FS0X3JCAPZQ10TXQF6FF2"
+277 http GET https://registry.npmjs.org/log4js
+278 verbose url raw logalot
+279 verbose url resolving [ 'https://registry.npmjs.org/', './logalot' ]
+280 verbose url resolved https://registry.npmjs.org/logalot
+281 info trying registry request attempt 1 at 22:35:23
+282 verbose etag "A7JF8DYRLSUF7ZWSVBKHIOTSO"
+283 http GET https://registry.npmjs.org/logalot
+284 verbose url raw method-override
+285 verbose url resolving [ 'https://registry.npmjs.org/', './method-override' ]
+286 verbose url resolved https://registry.npmjs.org/method-override
+287 info trying registry request attempt 1 at 22:35:23
+288 verbose etag "8B0CD0R12ZDUG7VY1FXRSMX9Z"
+289 http GET https://registry.npmjs.org/method-override
+290 verbose url raw moment
+291 verbose url resolving [ 'https://registry.npmjs.org/', './moment' ]
+292 verbose url resolved https://registry.npmjs.org/moment
+293 info trying registry request attempt 1 at 22:35:23
+294 verbose etag "E6C1RBXQJQ23OZ9VTES2D06XJ"
+295 http GET https://registry.npmjs.org/moment
+296 verbose url raw redis
+297 verbose url resolving [ 'https://registry.npmjs.org/', './redis' ]
+298 verbose url resolved https://registry.npmjs.org/redis
+299 info trying registry request attempt 1 at 22:35:23
+300 verbose etag "BY3KF4ZHCMGWGN6M6VBJIOML2"
+301 http GET https://registry.npmjs.org/redis
+302 verbose url raw socket.io
+303 verbose url resolving [ 'https://registry.npmjs.org/', './socket.io' ]
+304 verbose url resolved https://registry.npmjs.org/socket.io
+305 info trying registry request attempt 1 at 22:35:23
+306 verbose etag "7H6T5OU9490D80IZI93TF48R9"
+307 http GET https://registry.npmjs.org/socket.io
+308 verbose url raw mongoose
+309 verbose url resolving [ 'https://registry.npmjs.org/', './mongoose' ]
+310 verbose url resolved https://registry.npmjs.org/mongoose
+311 info trying registry request attempt 1 at 22:35:23
+312 verbose etag "7IIIFIO2MCOKBQRD736BR5KF6"
+313 http GET https://registry.npmjs.org/mongoose
+314 verbose url raw bcrypt
+315 verbose url resolving [ 'https://registry.npmjs.org/', './bcrypt' ]
+316 verbose url resolved https://registry.npmjs.org/bcrypt
+317 info trying registry request attempt 1 at 22:35:23
+318 verbose etag "7IXOKRVQXKWY8RTU6JE85C8P7"
+319 http GET https://registry.npmjs.org/bcrypt
+320 verbose url raw validator
+321 verbose url resolving [ 'https://registry.npmjs.org/', './validator' ]
+322 verbose url resolved https://registry.npmjs.org/validator
+323 info trying registry request attempt 1 at 22:35:23
+324 verbose etag "AETZ77CJFCEEXG5UR8M5TTRJ8"
+325 http GET https://registry.npmjs.org/validator
+326 http 304 https://registry.npmjs.org/compression
+327 silly registry.get cb [ 304,
+327 silly registry.get   { date: 'Tue, 24 Mar 2015 14:35:21 GMT',
+327 silly registry.get     server: 'Apache',
+327 silly registry.get     via: '1.1 varnish',
+327 silly registry.get     'last-modified': 'Tue, 24 Mar 2015 14:35:21 GMT',
+327 silly registry.get     'cache-control': 'max-age=60',
+327 silly registry.get     etag: '"6VJW7GC9UTT9YWMFKJT0SVTY9"',
+327 silly registry.get     age: '12',
+327 silly registry.get     'x-served-by': 'cache-nrt6123-NRT',
+327 silly registry.get     'x-cache': 'HIT',
+327 silly registry.get     'x-cache-hits': '1',
+327 silly registry.get     'x-timer': 'S1427207721.725162,VS0,VE1',
+327 silly registry.get     vary: 'Accept',
+327 silly registry.get     'content-length': '0',
+327 silly registry.get     'keep-alive': 'timeout=10, max=50',
+327 silly registry.get     connection: 'Keep-Alive' } ]
+328 verbose etag compression from cache
+329 silly lockFile e52f0cd9-compression-1-3-0 compression@^1.3.0
+330 silly lockFile e52f0cd9-compression-1-3-0 compression@^1.3.0
+331 error Error: No compatible version found: compression@'^1.3.0'
+331 error Valid install targets:
+331 error ["1.0.0","1.0.1","1.0.2","1.0.3","1.0.4","1.0.5","1.0.6","1.0.7","1.0.8","1.0.9","1.0.10","1.0.11","1.1.0","1.1.1","1.1.2","1.2.0","1.2.1","1.2.2","1.3.0","1.3.1","1.4.0","1.4.1","1.4.2","1.4.3"]
+331 error     at installTargetsError (/usr/local/lib/node_modules/npm/lib/cache.js:709:10)
+331 error     at /usr/local/lib/node_modules/npm/lib/cache.js:631:10
+331 error     at saved (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:138:7)
+331 error     at Object.oncomplete (fs.js:107:15)
+332 error If you need help, you may report this log at:
+332 error     <http://github.com/isaacs/npm/issues>
+332 error or email it to:
+332 error     <npm-@googlegroups.com>
+333 error System Linux 3.13.0-46-generic
+334 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+335 error cwd /projects/xiexie
+336 error node -v v0.10.8
+337 error npm -v 1.2.23
+338 verbose exit [ 1, true ]
