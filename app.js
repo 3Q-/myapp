@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+//var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
@@ -24,6 +24,7 @@ ejs.open = '{{';
 ejs.close = '}}';
 
 app.use(express.static(path.join(__dirname, 'public')));
+
 //app.use(favicon(''));
 app.use(compression());
 app.use(bodyParser.json());
@@ -47,7 +48,6 @@ app.use(user);
 app.use(messages);
 //app.use(favicon());
 app.use(routes);
-
 app.set('port', process.env.PORT || 8888);
 var server = app.listen(app.get('port'),function(){
     log.info('server running at '+app.get('port')+'  go  go go go..............................');
