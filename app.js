@@ -23,7 +23,7 @@ app.set('view engine', 'html');
 ejs.open = '{{';
 ejs.close = '}}';
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'static')));
 
 //app.use(favicon(''));
 app.use(compression());
