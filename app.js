@@ -1,6 +1,7 @@
+'use strict';
 var express = require('express');
 var path = require('path');
-//var favicon = require('serve-favicon');
+var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
@@ -8,24 +9,22 @@ var app = express();
 var log = require('./lib/log.js').logger('app.js');
 var compression = require('compression');
 var routes = require('./routes/index');
-var conf = require('./conf');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 var messages = require('./lib/messages');
 var user = require('./lib/user');
 var methodOverride = require('method-override');
+var env = require('./settings/env').getENV(app);
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join('/projects/xiexie/dist'));
 app.engine('html', ejs.__express);
-app.set('env', conf.env);
+app.set('env', env);
 app.set('view engine', 'html');
 ejs.open = '{{';
 ejs.close = '}}';
 
-app.use(express.static(path.join(__dirname, 'public')));
-
-//app.use(favicon(''));
+app.use(express.static(path.join('/projects/xiexie/static')));
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

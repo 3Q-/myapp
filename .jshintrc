@@ -1,5 +1,6 @@
 {
 
+  "strict":true,
   "curly":false,
   "node": true,
   "browser": true,
@@ -9,7 +10,7 @@
   "eqeqeq": true,
   "immed": true,
   "maxdeth":4,
-  "indent": 4,
+  "indent": 2,
   "latedef": "nofunc",
   "newcap": true,
   "noarg": true,

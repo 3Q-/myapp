@@ -24,6 +24,6 @@ var router = express.Router();
     router.post('/register', sign.register); // 提交注册
     router.get('/logout', sign.logout); // 退出
     router.get('/admin', admin.index); //后台
-    router.get('/blessingswish', blessingswish.index); // 聊天
+    router.get('/liaotian', blessingswish.index); // 聊天
 
 module.exports = router;

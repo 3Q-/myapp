@@ -1,3 +1,4 @@
+'use strict';
 var uutil = require('../lib/uutil');
 var render = uutil.render;
 var log = require('../lib/log.js').logger('/sign.js');
@@ -13,7 +14,7 @@ var notJump = ['register']; // 登陆后不让返回的页面
 
 exports.showLogin = function(req, res){
     req.session._loginReferer = req.headers.referer;
-    var obj = {title:'login', password:'', email:''};
+    var obj = {title:'用户登录', password:'', email:''};
     render(req, res, 'login', obj);
 };
 
@@ -26,8 +27,8 @@ exports.login = function(req, res, next){
         res.status(422); 
         log.error(msg);
         res.message(msg);
-        res.render('login', {
-            title: 'Login',
+        render(req, res, 'login', {
+            title: '用户登录',
             email: email,
             password: password
         });
@@ -72,7 +73,7 @@ exports.login = function(req, res, next){
 };
 
 exports.showRegister = function(req, res){
-    var obj = {title:'Register',repassword:'', password:'', email:''};
+    var obj = {title:'用户注册',repassword:'', password:'', email:''};
     render(req, res, 'register', obj);
 };
 
@@ -87,16 +88,19 @@ exports.register = function(req, res, next){
         res.status(422); 
         res.message(msg);
         log.error(msg);
-        res.render('register', {
-            title: 'Register',
+        render(req, res, 'register', {
+            title: '用户注册',
             email: email,
             password: password,
             repassword : repassword
         });
     });
 
+    if (!email) {
+        return ep.emit('r_err', '请输入正确邮箱!');
+    }
+
     if (!validator.isEmail(email)) {
-        res.message('请输入正确邮箱!');
         return ep.emit('r_err', email+' 不是合法邮箱。');
     }
 
