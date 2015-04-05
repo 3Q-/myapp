@@ -1,9 +1,10 @@
 /**
  * Created by coofly on 2014/7/12.
  */
+'use strict';
 var io = require('socket.io')();
 var xssEscape = require('xss-escape');
-
+//var log = require('.lib/log').logger('chat_server.js');
 var nickname_list = [];
 
 function HasNickname(_nickname) {

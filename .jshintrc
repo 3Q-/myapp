@@ -10,7 +10,7 @@
   "eqeqeq": true,
   "immed": true,
   "maxdeth":4,
-  "indent": 2,
+  "indent": 4,
   "latedef": "nofunc",
   "newcap": true,
   "noarg": true,
@@ -19,6 +19,7 @@
   "trailing": true,
   "jquery": true,
   "globals" : {
-      "next" : true
+      "next" : true,
+      "io" : true
    }
 }

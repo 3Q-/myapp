@@ -1,3 +1,6 @@
+'use strict';
+var uutil = require('../lib/uutil');
+var render = uutil.render;
 exports.index = function(req, res){
-    res.render('blessingswish');
+    render(req, res, 'blessingswish');
 };

@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+//var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
@@ -17,14 +17,14 @@ var methodOverride = require('method-override');
 var env = require('./settings/env').getENV(app);
 
 // view engine setup
-app.set('views', path.join('/projects/xiexie/dist'));
+app.set('views', path.join(env.views));
 app.engine('html', ejs.__express);
 app.set('env', env);
 app.set('view engine', 'html');
 ejs.open = '{{';
 ejs.close = '}}';
 
-app.use(express.static(path.join('/projects/xiexie/static')));
+app.use(express.static(path.join(env.static)));
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
