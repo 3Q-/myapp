@@ -10,7 +10,10 @@
             //List common dependencies here. Only need to list
             //top level dependencies, "include" will find
             //nested dependencies.
-            "include": ["jquery"]
+            "include": [
+                "jquery",
+                "bootstrap/dropdown"
+            ]
         },
 
         //Now set up a build layer for each main layer, but exclude

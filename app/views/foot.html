@@ -2,20 +2,19 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{=settings.env.js}}/require.min.js"></script>
-    11111
-    {{=JSON.stringify(settings.env.js)}}
-    {{if settings.env.js == 's.bupobuli.com/javascript' }}
+    <!-- json.stringify {{-JSON.stringify(settings.env.js)}} -->
+    {{if(settings.env.js ==='javascript' ){}}
     <script>
         require(['{{=settings.env.js}}/util.js'], function(){
             require(['controller/index']);
         })
     </script>
-    {{else}}
+    {{ }else { }}
     <script>
         require(['{{=settings.env.js}}/util.js'], function(){
-            require(['{{=settings.env.js}}/controller/index']);
+            require(['{{=settings.env.js}}/controller/index.js']);
         })
     </script>
-    {{/if}}
+    {{ } }}
   </body>
 </html>
