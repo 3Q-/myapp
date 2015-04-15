@@ -1,8 +1,21 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{=settings.env.js}}/??require.min.js,jquery.min.js,bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{{=settings.env.js}}/ie/ie10-viewport-bug-workaround.js"></script>
+    <script src="{{=settings.env.js}}/require.min.js"></script>
+    11111
+    {{=JSON.stringify(settings.env.js)}}
+    {{if settings.env.js == 's.bupobuli.com/javascript' }}
+    <script>
+        require(['{{=settings.env.js}}/util.js'], function(){
+            require(['controller/index']);
+        })
+    </script>
+    {{else}}
+    <script>
+        require(['{{=settings.env.js}}/util.js'], function(){
+            require(['{{=settings.env.js}}/controller/index']);
+        })
+    </script>
+    {{/if}}
   </body>
 </html>

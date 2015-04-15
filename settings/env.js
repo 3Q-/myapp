@@ -5,28 +5,28 @@ exports.getENV = function(app){
     if(app.get('env') === 'production'){
         log.info('============================running at production==================================');
         env = {
-            js : 'http://s.bupobuli.com/static/javascript',
-            css : 'http://s.bupobuli.com/static/css',
-            img : 'http://s.bupobuli.com/static/img',
+            js : 'http://s.bupobuli.com/javascript',
+            css : 'http://s.bupobuli.com/css',
+            img : 'http://s.bupobuli.com/images',
             views : '/projects/xiexie/dist/views',
-            static : '/projects/xiexie/dist/static'
+            static : '/projects/xiexie/dist'
         };
     }else if(app.get('env') === 'development'){
         log.info('============================running at development==================================');
         env = {
-            js : '/static/javascript',
-            css : '/static/css',
-            img : '/static/image',
+            js : 'javascript',
+            css : 'css',
+            img : 'images',
             uploads : '/uploads/',
             views : '/projects/xiexie/app/views',
-            static : '/projects/xiexie/app/static'
+            static : '/projects/xiexie/app/'
         };
     }else{
         log.info('============================running at test==================================');
         env = {
-            js : '/static/javascript',
-            css : '/static/css',
-            img : '/static/image',
+            js : 'javascript',
+            css : 'css',
+            img : 'images',
             uploads : '/uploads/',
             views : '/projects/xiexie/dist/views',
             static : '/projects/xiexie/dist/static'
