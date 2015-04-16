@@ -1,18 +1,14 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keyword" content="{{=keyword}}">
-        <meta name="description" content="{{=keyword}}">
-        <meta name="author" content="yongjy@126.com">
+        {{include include/head-meta.html}}
         <title>{{=(title||"不破不立")}}</title>
-        <link href="{{=settings.env.css}}/??bt/bootstrap.min.css,log-reg.css" rel="stylesheet" media="screen">
+        {{include include/head-css.html}}
+        <link href="{{=settings.env.css}}/log-reg.css" rel="stylesheet">
     </head>
     <body>
         <div class="container web-body" style="margin-top:100px;width: 900px;">
-            {{include messages.html}}
+            {{include include/messages.html}}
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="panel panel-default">
@@ -39,7 +35,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <script src="{{=settings.env.js}}/??require.min.js,jquery.min.js,bootstrap.min.js"></script>
+            {{include include/footer.html}}
+        </div><!-- /.container -->
+        {{include include/foot-js.html}}
     </body>
 </html>

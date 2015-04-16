@@ -23,11 +23,6 @@ module.exports = function (grunt) {
             src: {
                 files: [{
                     expand: true,
-                    cwd: '<%= config.app %>/views',
-                    src: ['*.html'],
-                    dest: '<%= config.dist %>/views'
-                },{
-                    expand: true,
                     cwd: '<%= config.app %>/static/js',
                     src: ['**/*.min.js'],
                     dest: '<%= config.dist %>/static/js',
@@ -72,6 +67,20 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        includes: {
+            build: {
+                cwd: '<%= config.app %>/views',
+                src: [ '*.html'],
+                dest: '<%= config.dist %>/views',
+                options: {
+                    ///^(\s*)include\s+"(\S+)"\s*$/
+                    includeRegexp : /\{\{include\s+(\S+)\}\}/,
+                    flatten: true,
+                    includePath: '<%= config.app %>/views',
+                    banner: '<!-- Site built using grunt includes! -->\n'
+                }
+            }
+        },
 
         // Watches files for changes and runs tasks based on the changed files
         htmlmin: {
@@ -86,7 +95,8 @@ module.exports = function (grunt) {
                     removeEmptyAttributes: true,
                     removeOptionalTags: true,
                     removeRedundantAttributes: true,
-                    useShortDoctype: true
+                    useShortDoctype: true,
+                    removeEmptyElements: true
                 },
                 files: [{
                     expand: true,
@@ -104,6 +114,7 @@ module.exports = function (grunt) {
         'imagemin',
         'cssmin',
         'uglify',
+        'includes',
         'htmlmin'
     ]);
 };
