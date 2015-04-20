@@ -20,6 +20,7 @@
   "jquery": true,
   "globals" : {
       "next" : true,
-      "io" : true
+      "io" : true,
+      "define": true
    }
 }

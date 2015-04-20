@@ -35,13 +35,13 @@ css/style.css
 ----------------
 css/style.css
 
-javascript/./util.js
+javascript/util.js
 ----------------
 javascript/util.js
 javascript/jquery.js
 javascript/bootstrap/dropdown.js
 
-javascript/./controller/index.js
+javascript/controller/index.js
 ----------------
 javascript/modules/indexModule.js
 javascript/controller/index.js

@@ -19,51 +19,44 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        copy: {
-            src: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/static/js',
-                    src: ['**/*.min.js'],
-                    dest: '<%= config.dist %>/static/js',
-                },{
-                    expand: true,
-                    cwd: '<%= config.app %>/static',
-                    src: ['fonts/*', '*.{ico,png.txt}'],
-                    dest: '<%= config.dist %>/static',
-                }]
-            }
-        },
-        imagemin: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/static/img',
-                    src: '{,*/}*.{gif,jpeg,jpg,png}',
-                    dest: '<%= config.dist %>/static/img'
-                }]
+        requirejs: {
+            compile:{
+                options:{
+                    "appDir": "./app",
+                    "mainConfigFile": "./app/javascript/util.js",
+                    "dir": "./dist",
+                    "optimizeCss": "standard.keepLines",
+                    "useStrict": "true",
+                    "locale" : 'en-us',
+                    // 使用 UglifyJS 时的可配置参数
+                    // See https://github.com/mishoo/UglifyJS for the possible values.
+                    optimize: "uglify",
+                    uglify: {
+                        toplevel: true,
+                        ascii_only: true,
+                        beautify: false,
+                        max_line_length: 1000
+                    },
+                    "modules": [{
+                        "name": "util",
+                        "include": [
+                            "jquery",
+                            "bootstrap/dropdown"
+                        ]
+                    },{
+                        "name": "controller/index",
+                        "exclude": ["./util", "jquery"]
+                    }]
+                }
             }
         },
         uglify: {
             prod: {
                 files: [{
                     expand: true,
-                    cwd: '<%= config.app %>/static/js',
+                    cwd: '<%= config.dist %>/javascript',
                     src: ['**/*.js', '!**/*.min.js'],
-                    dest: '<%= config.dist %>/static/js',
-                }]
-            }
-        },
-        cssmin: {
-            prod: {
-                options: {
-                    report: 'gzip'
-                },
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/static/css',
-                    src: ['**/*.css'],
-                    dest: '<%= config.dist %>/static/css',
+                    dest: '<%= config.dist %>/javascript',
                 }]
             }
         },
@@ -110,10 +103,9 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default',[
         'clean',
-        'copy',
-        'imagemin',
-        'cssmin',
-        'uglify',
+        'requirejs',
+        //'cssmin',
+        //'uglify',
         'includes',
         'htmlmin'
     ]);

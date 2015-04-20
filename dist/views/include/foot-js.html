@@ -1,0 +1,5 @@
+ {{if(settings.env.js ==='javascript' ){}} <script src="{{=settings.env.js}}/require.min.js"></script> <script>require(['{{=settings.env.js}}/util.js'], function(){
+        require(['bootstrap/dropdown','controller/index']);
+    });</script> {{ }else { }} <script src="{{=settings.env.js}}/require.min.js"></script> <script>require(['{{=settings.env.js}}/util.js'], function(){
+        require(['controller/index']);
+    });</script> {{ } }}

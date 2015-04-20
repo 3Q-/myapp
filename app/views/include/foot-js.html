@@ -7,8 +7,10 @@
     });
 </script>
 {{ }else { }}
-<script src="{{=settings.env.js}}/??require.min.js,util.js"></script>
+<script src="{{=settings.env.js}}/require.min.js"></script>
 <script>
-    require(['{{=settings.env.js}}/controller/index.js']);
+    require(['{{=settings.env.js}}/util.js'], function(){
+        require(['controller/index']);
+    });
 </script>
 {{ } }}
