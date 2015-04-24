@@ -1,1 +1,0 @@
-define("modules/indexModule",["require","jquery"],function(e){"use strict";var t=e("jquery");return{getBodySize:function(){return t("body").size()}}}),define("controller/index",["require","../modules/indexModule"],function(e){"use strict";var t=e("../modules/indexModule"),n=t.getBodySize();console.log(n)});
