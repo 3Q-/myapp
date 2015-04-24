@@ -1,6 +1,8 @@
 define(function(require){
     'use strict';
-    var indexModule = require('../modules/indexModule');
-    var size = indexModule.getBodySize();
-    console.log(size);
+    alert('good');
+    var indexModule = require('../modules/indexModule'),
+        size = indexModule.getBodySize(),
+        $navBar = $('#navbar');
+    $navBar.css({border:'1px solid red', height: 100});
 });

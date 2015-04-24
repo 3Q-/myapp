@@ -6,7 +6,7 @@
         //First set up the common build layer.
         {
             //module names are relative to baseUrl
-            "name": "./util",
+            "name": "util",
             //List common dependencies here. Only need to list
             //top level dependencies, "include" will find
             //nested dependencies.
@@ -29,8 +29,8 @@
         //That loading sequence is controlled in page1.js.
         {
             //module names are relative to baseUrl/paths config
-            "name": "./controller/index",
-            "exclude": ["./util"]
+            "name": "controller/index",
+            "exclude": ["./util", "jquery"]
         }
     ]
 }

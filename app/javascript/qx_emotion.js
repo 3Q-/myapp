@@ -2,6 +2,7 @@
  * Created by Coofly on 2014/7/16.
  */
 (function () {
+    'use strict';
 	var QxEmotion = function (_emotion_btn, _edit) {
         QxEmotion.Bind(_emotion_btn, _edit);
 	};
@@ -33,14 +34,14 @@
 		while(null != (re_ret = re.exec(_text))){
 			emotion_name = re_ret[1];
 			if(undefined != QxEmotion.data[emotion_name]){
-				emotion_path = 'http://s.xiexie.com/static/img/qqface/' + QxEmotion.data[emotion_name];
+				emotion_path = 'images/qqface/' + QxEmotion.data[emotion_name];
 				_text = _text.replace(re_ret[0], '<img src="' + emotion_path + '" atl="' + emotion_name + '">');
 			}
 		}
 		return _text;
 	};
 
-	QxEmotion.path = '/img/qqface/';
+	QxEmotion.path = 'images/qqface/';
 
 	QxEmotion.data = {
 		'微笑' : '36.gif',
@@ -88,7 +89,7 @@
 				emotion_html += '<tr>';
 			}
 			//生成img
-			var path = 'http://s.xiexie.com/static/img/qqface/' + QxEmotion.data[emotion_name];
+			var path = 'images/qqface/' + QxEmotion.data[emotion_name];
 			emotion_html += '<td><img src="'+ path + '" alt="' + emotion_name + '"></td>';
 			column_count++;
 			//闭合tr
