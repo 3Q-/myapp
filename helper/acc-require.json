@@ -1,0 +1,20 @@
+{
+    "usercenter": {
+        "bootVer": "0.0.1",
+        "paths":{
+            "jquery": "common/js/jquery-1.11.1",
+            "modules":"common/js/modules",
+            "plugins":"common/js/plugins",
+            "homepage":"common/js/homepage",
+            "home": "common/js",
+            "usercenter":"usercenter/js"
+        },
+        "modules": [
+            {"name": "usercenter/boot", "include": ["jquery"]},
+            {"name": "usercenter/user-qa-statistics", "exclude": ["usercenter/boot"]},
+            {"name": "usercenter/user-questions-statistics", "exclude": ["usercenter/boot"]},
+            {"name": "usercenter/user-index", "exclude": ["usercenter/boot"]}
+        ]
+    },
+    "common":{}
+}

@@ -1,0 +1,8 @@
+{
+    "nodePath":"/home/xiexie/statics/dev-acc369/node_modules",
+    "create":true,
+    "assetPath":"/home/xiexie/statics/acc369",
+    "pagePath":"/home/xiexie/tomcat/webapps",
+    "port":"9001",
+    "app":"common,usercenter"
+}

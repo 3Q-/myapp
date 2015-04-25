@@ -5,4 +5,4 @@
  * details, see http://creativecommons.org/licenses/by/3.0/.
  */
 
-window.location.protocol=="file:"&&window.alert("ERROR: Bootstrap's responsive CSS is disabled!\nSee getbootstrap.com/getting-started/#respond-file-proto for details.");
+"file:"==window.location.protocol&&window.alert("ERROR: Bootstrap's responsive CSS is disabled!\nSee getbootstrap.com/getting-started/#respond-file-proto for details.");

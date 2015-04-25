@@ -1,1 +1,1 @@
-define(["require","../modules/indexModule"],function(e){"use strict";var t=e("../modules/indexModule"),n=t.getBodySize();console.log(n)});
+define(["require","../modules/indexModule"],function(e){"use strict";{var d=e("../modules/indexModule");d.getBodySize()}});
