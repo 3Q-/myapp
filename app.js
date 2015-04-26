@@ -1,20 +1,20 @@
 'use strict';
-var express = require('express');
-var path = require('path');
-//var favicon = require('serve-favicon');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var ejs = require('ejs');
-var app = express();
-var log = require('./lib/log.js').logger('app.js');
-var compression = require('compression');
-var routes = require('./routes/index');
-var session = require('express-session');
-var RedisStore = require('connect-redis')(session);
-var messages = require('./lib/messages');
-var user = require('./lib/user');
-var methodOverride = require('method-override');
-var env = require('./settings/env').getENV(app);
+var express = require('express'),
+    path = require('path'),
+    //favicon = require('serve-favicon'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    ejs = require('ejs'),
+    app = express(),
+    log = require('./lib/log.js').logger('app.js'),
+    compression = require('compression'),
+    routes = require('./routes/index'),
+    session = require('express-session'),
+    RedisStore = require('connect-redis')(session),
+    messages = require('./lib/messages'),
+    user = require('./lib/user'),
+    methodOverride = require('method-override'),
+    env = require('./settings/env').getENV(app);
 
 // view engine setup
 app.set('views', path.join(env.views));
@@ -51,5 +51,4 @@ app.set('port', process.env.PORT || 8888);
 var server = app.listen(app.get('port'),function(){
     log.info('server running at '+app.get('port')+'  go  go go go..............................');
 });
-
 require('./chat_server').listen(server);
