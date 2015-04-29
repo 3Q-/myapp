@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = function (grunt) {
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
@@ -6,6 +7,11 @@ module.exports = function (grunt) {
         app: 'app',
         dist: 'dist',
     };
+
+    var requireConfig = require('./helper/requireConfig.js');
+    var requireJson = require('./helper/requireJson.js');
+    requireConfig.modules = requireJson;
+
     grunt.initConfig({
         config: config,
         clean: {
@@ -19,47 +25,12 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        requirejs: {
-            compile:{
-                options:{
-                    "appDir": "./app",
-                    "mainConfigFile": "./app/javascript/util.js",
-                    "dir": "./dist",
-                    "optimizeCss": "standard.keepLines",
-                    "useStrict": "true",
-                    "locale" : 'en-us',
-                    // 使用 UglifyJS 时的可配置参数
-                    // See https://github.com/mishoo/UglifyJS for the possible values.
-                    optimize: "uglify2",
-                    uglify2: {
-                        toplevel: true,
-                        ascii_only: true,
-                        beautify: true,
-                        max_line_length: 1000,
-                        compress : {
-                            drop_console:true
-                        }
-                    },
-                    "modules": [{
-                        "name": "util",
-                        "include": [
-                            "jquery",
-                            "bootstrap/dropdown"
-                        ]
-                    },{
-                        "name": "controller/index",
-                        "exclude": ["./util", "jquery"]
-                    }]
-                }
-            }
-        },
         uglify: {
             prod: {
                 files: [{
                     expand: true,
                     cwd: '<%= config.dist %>/javascript',
                     src: ['**/*.js', '!**/*.min.js'],
-                    dest: '<%= config.dist %>/javascript',
                 }]
             }
         },
@@ -101,9 +72,52 @@ module.exports = function (grunt) {
                     dest: '<%= config.dist %>/views'
                 }]
             }
+        },
+        useminPrepare: {
+            options: {
+                dest: '<%= config.dist %>'
+            },
+            html: '<%= config.app %>/index.html'
+        },
+
+        // Performs rewrites based on rev and the useminPrepare configuration
+        usemin: {
+            options: {
+                assetsDirs: [
+                    '<%= config.dist %>',
+                    '<%= config.dist %>/images',
+                    '<%= config.dist %>/css'
+                ]
+            },
+            html: ['<%= config.dist %>/{,*/}*.html'],
+            css: ['<%= config.dist %>/css/{,*/}*.css']
+        },
+        rev: {
+            options: {
+                algorithm: 'md5',
+                length: 8,
+                process: function(basename, hash, ext) {
+                    basename = basename.replace(/__\w{8}/, '');
+                    return basename + '_' + hash + '.' + ext;
+                }
+            },
+            js : {
+                src  :'<%= config.dist %>/javascript/**/*.js'
+
+            }
+        },
+        requirejs: {
+            compile: {
+                options: requireConfig
+            }
         }
     });
-
+    grunt.registerTask('tu', [,
+        'useminPrepare',
+        'concat:generated',
+        'uglify:generated',
+        'usemin'
+    ]);
     grunt.registerTask('default',[
         'clean',
         'requirejs',
@@ -113,3 +127,6 @@ module.exports = function (grunt) {
         'htmlmin'
     ]);
 };
+
+
+

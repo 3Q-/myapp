@@ -43,5 +43,6 @@ javascript/bootstrap/dropdown.js
 
 javascript/controller/index.js
 ----------------
+javascript/modules/indexModuleb.js
 javascript/modules/indexModule.js
 javascript/controller/index.js
