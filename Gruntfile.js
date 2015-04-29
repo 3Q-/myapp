@@ -30,12 +30,15 @@ module.exports = function (grunt) {
                     "locale" : 'en-us',
                     // 使用 UglifyJS 时的可配置参数
                     // See https://github.com/mishoo/UglifyJS for the possible values.
-                    optimize: "uglify",
-                    uglify: {
+                    optimize: "uglify2",
+                    uglify2: {
                         toplevel: true,
                         ascii_only: true,
-                        beautify: false,
-                        max_line_length: 1000
+                        beautify: true,
+                        max_line_length: 1000,
+                        compress : {
+                            drop_console:true
+                        }
                     },
                     "modules": [{
                         "name": "util",
