@@ -27,6 +27,9 @@ module.exports = function (grunt) {
         },
         uglify: {
             prod: {
+                options : {
+                    report : 'gzip'
+                },
                 files: [{
                     expand: true,
                     cwd: '<%= config.dist %>/javascript',
@@ -44,9 +47,44 @@ module.exports = function (grunt) {
                     includeRegexp : /\{\{include\s+(\S+)\}\}/,
                     flatten: true,
                     includePath: '<%= config.app %>/views',
-                    banner: '<!-- Site built using grunt includes! -->\n'
+                    banner: '<!-- Site built using grunt includes! -->\n',
+                    silent : true
                 }
             }
+        },
+        rev : {
+            options : {
+                encoding : 'utf8',
+                algorithm : 'md5',
+                length : 8
+            },
+            dist : {
+                files : [{
+                    src:['<%= config.dist %>/javascript/**/*.js']
+                }]
+            }
+        },
+
+
+        usemin: {
+            options: {
+                assetsDirs: [
+                    '<%= config.dist %>/views'
+                ],
+                blockReplacements: {
+                    css: function (block) {
+                        console.log('css', block);
+                    },
+                    js: function (block) {
+                        console.log('js',block);
+                    },
+                    html: function (block) {
+                        console.log('html', block);
+                    }
+                }
+
+            },
+            html: ['<%= config.dist %>/views/**/*.html'],
         },
 
         // Watches files for changes and runs tasks based on the changed files
@@ -123,8 +161,8 @@ module.exports = function (grunt) {
         'requirejs',
         //'cssmin',
         //'uglify',
-        'includes',
-        'htmlmin'
+        'includes'
+        //'htmlmin'
     ]);
 };
 

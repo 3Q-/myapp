@@ -1,1 +1,0 @@
-define(["require","../modules/indexModule"],function(e){"use strict";{var d=e("../modules/indexModule");d.getBodySize()}});

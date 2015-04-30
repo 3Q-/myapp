@@ -1,5 +1,4 @@
 {
-
   "strict":true,
   "curly":false,
   "node": true,
@@ -20,7 +19,6 @@
   "jquery": true,
   "globals" : {
       "next" : true,
-      "io" : true,
-      "define": true
+      "io" : true
    }
 }
