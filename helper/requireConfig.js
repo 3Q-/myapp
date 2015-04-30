@@ -12,6 +12,7 @@ module.exports = {
     'optimize': 'uglify2',
     //如果设置为true，在输出目录将会删除掉已经合并了的文件
     'removeCombined' : true,
+    'fileExclusionRegExp': /^(css|images|views|fonts)/,
     'uglify2': {
         'compress': {
             'drop_console': true
@@ -19,7 +20,6 @@ module.exports = {
     },
     onBuildRead: function(moduleName, path, contents) {
         if (moduleName === 'util') {
-            console.log( typeof contents);
             contents = contents.replace(/javascript/img, 'http://s.bupobuli.com/javascript');
         }
         return contents;

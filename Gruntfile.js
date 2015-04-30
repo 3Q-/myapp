@@ -20,7 +20,8 @@ module.exports = function (grunt) {
                     dot: true,
                     src: [
                         'dist/*',
-                        '!dist/.git*'
+                        '!dist/.git*',
+                        '.tmp'
                     ]
                 }]
             }
@@ -52,40 +53,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        rev : {
-            options : {
-                encoding : 'utf8',
-                algorithm : 'md5',
-                length : 8
-            },
-            dist : {
-                files : [{
-                    src:['<%= config.dist %>/javascript/**/*.js']
-                }]
-            }
-        },
 
-
-        usemin: {
-            options: {
-                assetsDirs: [
-                    '<%= config.dist %>/views'
-                ],
-                blockReplacements: {
-                    css: function (block) {
-                        console.log('css', block);
-                    },
-                    js: function (block) {
-                        console.log('js',block);
-                    },
-                    html: function (block) {
-                        console.log('html', block);
-                    }
-                }
-
-            },
-            html: ['<%= config.dist %>/views/**/*.html'],
-        },
 
         // Watches files for changes and runs tasks based on the changed files
         htmlmin: {
@@ -111,37 +79,43 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        useminPrepare: {
-            options: {
-                dest: '<%= config.dist %>'
-            },
-            html: '<%= config.app %>/index.html'
-        },
-
-        // Performs rewrites based on rev and the useminPrepare configuration
-        usemin: {
-            options: {
-                assetsDirs: [
-                    '<%= config.dist %>',
-                    '<%= config.dist %>/images',
-                    '<%= config.dist %>/css'
-                ]
-            },
-            html: ['<%= config.dist %>/{,*/}*.html'],
-            css: ['<%= config.dist %>/css/{,*/}*.css']
-        },
-        rev: {
+        filerev: {
             options: {
                 algorithm: 'md5',
                 length: 8,
                 process: function(basename, hash, ext) {
                     basename = basename.replace(/__\w{8}/, '');
-                    return basename + '_' + hash + '.' + ext;
+                    return basename + '__' + hash + '.' + ext;
                 }
             },
-            js : {
-                src  :'<%= config.dist %>/javascript/**/*.js'
-
+            js: {
+                src: '<%= config.dist %>/javascript/**/*.js'
+            }
+        },
+        replace: {
+            dist: {
+                options: {
+                    patterns: [
+                        {
+                            match: /\{\{\s*=\s*settings\.env\.js\s*\}\}/g,
+                            replacement: 'http://s.bupobuli.com/javascript'
+                        },
+                        {
+                            match: /\{\{\s*=\s*settings\.env\.images\s*\}\}/g,
+                            replacement: 'http://s.bupobuli.com/images'
+                        },
+                        {
+                            match: /\{\{\s*=\s*settings\.env\.css\s*\}\}/g,
+                            replacement: 'http://s.bupobuli.com/css'
+                        },
+                    ]
+                },
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: ['dist/views/index.html'],
+                    dest: 'build/'
+                }]
             }
         },
         requirejs: {
@@ -150,12 +124,7 @@ module.exports = function (grunt) {
             }
         }
     });
-    grunt.registerTask('tu', [,
-        'useminPrepare',
-        'concat:generated',
-        'uglify:generated',
-        'usemin'
-    ]);
+
     grunt.registerTask('default',[
         'clean',
         'requirejs',

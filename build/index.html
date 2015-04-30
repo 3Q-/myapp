@@ -11,10 +11,10 @@
 
         <title>{{=(title||"不破不立")}}</title>
         <!-- Bootstrap core CSS -->
-<link href="{{=settings.env.css}}/??bt/bootstrap.min.css,bt/navbar-fixed-top.css,bt/carousel.css" rel="stylesheet">
+<link href="http://s.bupobuli.com/css/??bt/bootstrap.min.css,bt/navbar-fixed-top.css,bt/carousel.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
-<script src="{{=settings.env.js}}/ie/??html5shiv.min.js,respond.min.js"></script>
+<script src="http://s.bupobuli.com/javascript/ie/??html5shiv.min.js,respond.min.js"></script>
 <![endif]-->
 
         <link rel="stylesheet" href="style.css" media="all">
@@ -142,22 +142,18 @@
       </footer>
 
         </div><!-- /.container -->
-
-<script src="../javascript/common.js"></script>
-
-
-<!-- json.stringify {{-JSON.stringify(settings.env.js)}} -->
+        <!-- json.stringify {{-JSON.stringify(settings.env.js)}} -->
 {{if(settings.env.js ==='javascript' ){}}
-<script src="{{=settings.env.js}}/require.min.js"></script>
+<script src="http://s.bupobuli.com/javascript/require.min.js"></script>
 <script>
-    require(['{{=settings.env.js}}/util.js'], function(){
+    require(['http://s.bupobuli.com/javascript/util.js'], function(){
         require(['bootstrap/dropdown','controller/index']);
     });
 </script>
 {{ }else { }}
-<script src="{{=settings.env.js}}/require.min.js"></script>
+<script src="http://s.bupobuli.com/javascript/require.min.js"></script>
 <script>
-    require(['{{=settings.env.js}}/util.js'], function(){
+    require(['http://s.bupobuli.com/javascript/util.js'], function(){
         require(['controller/index']);
     });
 </script>
