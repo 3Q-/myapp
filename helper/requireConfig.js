@@ -12,7 +12,7 @@ module.exports = {
     'optimize': 'uglify2',
     //如果设置为true，在输出目录将会删除掉已经合并了的文件
     'removeCombined' : true,
-    'fileExclusionRegExp': /^(css|images|views|fonts)/,
+    'fileExclusionRegExp': /^(css|images|views|fontsgru)/,
     'uglify2': {
         'compress': {
             'drop_console': true
