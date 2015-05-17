@@ -1,0 +1,8 @@
+<script src="<%= static('js') %>/require.min.js"></script>
+<script>
+    require(['<%= static('js') %>/util.js'], function(){
+      <% if(!page.nojs){ %>
+        require(['controller/<%-file_name%>']);
+      <% } %>
+    });
+</script>

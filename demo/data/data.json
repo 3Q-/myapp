@@ -1,0 +1,59 @@
+{
+
+  "home": {
+    "path_to_data": [
+      "dev/data/global.json",
+      {"dev/data/meta.json": "home"}
+    ]
+  },
+
+  "about": {
+    "path_to_layout": "dev/layouts/default.ejs",
+    "path_to_data": [
+      "dev/data/global.json",
+      {"dev/data/meta.json": "about"}
+    ]
+  },
+
+  "work": {
+    "path_to_layout": "dev/layouts/default.ejs",
+    "path_to_data": [
+      "dev/data/global.json",
+      {"dev/data/meta.json": "work"}
+    ]
+  },
+
+  "contact": {
+    "path_to_layout": "dev/layouts/default.ejs",
+    "path_to_data": [
+      "dev/data/global.json",
+      {"dev/data/meta.json": "contact"}
+    ]
+  },
+
+  "flexbox": {
+    "category": "lab",
+    "path_to_layout": "dev/layouts/experiment.ejs",
+    "path_to_data": [
+      "dev/data/global.json",
+      {"dev/data/meta.json": "flexbox"}
+    ]
+  },
+
+  "project_name": {
+    "category": "project",
+    "path_to_layout": "dev/layouts/project.ejs",
+    "path_to_data": [
+      "dev/data/global.json",
+      {"dev/data/meta.json": "project_name"}
+    ]
+  },
+   "default": {
+    "path_to_layout": "dev/layouts/default.ejs",
+    "path_to_data": [
+      "dev/data/global.json",
+      {"dev/data/meta.json": "default"}
+    ]
+  }
+
+}

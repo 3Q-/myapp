@@ -1,0 +1,45 @@
+{
+
+  "default": {
+    "title": "{{= title }} | 不破不立",
+    "description": "不破不立,破而后立",
+    "keywords": "不破不立,破而后立"
+  },
+
+  "home": {
+    "title": "不破不立",
+    "description": "不破不立,破而后立 ",
+    "keywords": "不破不立,破而后立"
+  },
+
+  "about": {
+    "title": "About",
+    "description": "Compile static html from ejs templates",
+    "keywords": "gruntplugin, ejs, static html, static site generator, templates, templating engine, template, embedded js"
+  },
+
+  "work": {
+    "title": "Work",
+    "description": "Compile static html from ejs templates",
+    "keywords": "gruntplugin, ejs, static html, static site generator, templates, templating engine, template, embedded js"
+  },
+
+  "contact": {
+    "title": "Contact",
+    "description": "Compile static html from ejs templates",
+    "keywords": "gruntplugin, ejs, static html, static site generator, templates, templating engine, template, embedded js"
+  },
+
+  "flexbox": {
+    "title": "Flexible Box Model",
+    "description": "Future Proof Flexbox",
+    "keywords": ""
+  },
+
+  "project_name": {
+    "title": "{{title}} | title",
+    "description": "Some description here",
+    "keywords": ""
+  }
+
+}
