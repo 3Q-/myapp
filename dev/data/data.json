@@ -1,0 +1,11 @@
+{
+
+  "index": {
+    "path_to_layout": "dev/views/layouts/index.ejs",
+    "path_to_data": [
+      "dev/data/global.json",
+      {"dev/data/page.json": "home"}
+    ]
+  }
+
+}

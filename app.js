@@ -23,6 +23,7 @@ app.set('env', env);
 app.set('view engine', 'html');
 ejs.open = '{{';
 ejs.close = '}}';
+ejs.cache = true;
 
 app.use(express.static(path.join(env.static)));
 app.use(compression());
@@ -48,6 +49,7 @@ app.use(messages);
 //app.use(favicon());
 app.use(routes);
 app.set('port', process.env.PORT || 8888);
+//
 var server = app.listen(app.get('port'),function(){
     log.info('server running at '+app.get('port')+'  go  go go go..............................');
 });

@@ -44,12 +44,13 @@
     "grunt-contrib-sass": "~0.9.2",
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-filerev": "^2.3.1",
     "grunt-includes": "^0.5.1",
     "grunt-replace": "^0.8.0",
     "grunt-rev": "^0.1.0",
     "grunt-usemin": "^3.0.0",
     "load-grunt-tasks": "~3.1.0",
-    "time-grunt": "~1.1.0"
+    "time-grunt": "~1.1.0",
+    "grunt-ejs-static": "~0.4.3",
+    "grunt-contrib-connect": "~0.10.1"
   }
 }

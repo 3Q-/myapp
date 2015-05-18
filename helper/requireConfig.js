@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
-    'appDir': './app',
-    'baseUrl': './javascript',
-    'mainConfigFile': './app/javascript/util.js',
+    'appDir': './dev',
+    'baseUrl': './scripts',
+    'mainConfigFile': './dev/scripts/util.js',
     'dir': './dist',
     'optimizeCss': 'standard.keepLines',
     'useStrict': true,
@@ -20,7 +20,7 @@ module.exports = {
     },
     onBuildRead: function(moduleName, path, contents) {
         if (moduleName === 'util') {
-            contents = contents.replace(/javascript/img, 'http://s.bupobuli.com/javascript');
+            contents = contents.replace(/scripts/img, 'http://static.bupobuli.com/scripts');
         }
         return contents;
     }

@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 	var config, myConfig, requireConfig;
 
 	config = require('./config.json');
-	
+
 	try {
 		myConfig = require('./myconfig.json');
 	}catch(err) {
@@ -299,7 +299,7 @@ module.exports = function(grunt) {
         var css = '',
             js = '',
             rjs = '',
-            
+
             // 静态资源收集后放在这里
             res = {},
 
@@ -327,7 +327,7 @@ module.exports = function(grunt) {
             // 用来切分多个资源
             res_re = /\S+/gm;
 
-        
+
         if(config.hosts) {
             for(var i in config.hosts) {
                 hosts[i] = config.hosts[i];
@@ -372,7 +372,7 @@ module.exports = function(grunt) {
         		baseUrl = surl+'/'+app,
                 appConfig = requireConfig[app] || {};
 
-        	rjs = 
+        	rjs =
         	'<script type="text/javascript" src="'+surl+'/common/js/require.js"></script>'+
         	'<script type="text/javascript">'+
         		'require(["'+baseUrl+'/js/boot.js"], function() {'+
@@ -399,7 +399,7 @@ module.exports = function(grunt) {
                     }
 
                     break;
-*/                
+*/
 				}
 
                 case 'dev': {
